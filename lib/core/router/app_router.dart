@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-import 'package:marmot/features/main/presentation/view/main_page.dart';
-import 'package:marmot/generated/l10n.dart';
+import 'package:montaa/features/main/presentation/view/main_page.dart';
+import 'package:montaa/generated/l10n.dart';
 
 part 'app_router.g.dart';
 

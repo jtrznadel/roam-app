@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:marmot/core/theme/app_theme.dart';
+import 'package:montaa/core/theme/app_theme.dart';
 
 import 'core/router/app_router.dart';
 import 'generated/l10n.dart';
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      title: 'marmo',
+      title: 'montaa',
       theme: AppTheme.defaultTheme,
     );
   }
