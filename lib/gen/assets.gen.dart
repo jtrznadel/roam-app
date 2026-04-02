@@ -17,11 +17,11 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
-  /// File path: assets/svg/montaa_logo.svg
-  SvgGenImage get montaaLogo => const SvgGenImage('assets/svg/montaa_logo.svg');
+  /// File path: assets/svg/roam_logo.svg
+  SvgGenImage get roamLogo => const SvgGenImage('assets/svg/roam_logo.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [montaaLogo];
+  List<SvgGenImage> get values => [roamLogo];
 }
 
 class Assets {

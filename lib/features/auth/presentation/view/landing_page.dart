@@ -20,7 +20,7 @@ class LandingPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Assets.svg.montaaLogo.svg(height: 100),
+                Assets.svg.roamLogo.svg(height: 100),
                 Text(
                   "Welcome to Montaa",
                   style: context.textTheme.headlineMedium,

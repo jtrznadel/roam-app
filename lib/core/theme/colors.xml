@@ -2,9 +2,9 @@
 <resources>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="primary">#84CC16</color>
+    <color name="primary">#B3FF45</color>
     <color name="onPrimary">#FFFFFF</color>
-    <color name="background">#1A1A1A</color>
+    <color name="background">#DAD7CD</color>
     <color name="fontPrimary">#FFFFFF</color>
     <color name="fontSecondary">#555555</color>
 </resources>
