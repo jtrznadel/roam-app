@@ -4,6 +4,7 @@
     <color name="black">#000000</color>
     <color name="primary">#84CC16</color>
     <color name="onPrimary">#FFFFFF</color>
-    <color name="background">#F6F6F2</color>
-    <color name="fontPrimary">#000000</color>
+    <color name="background">#1A1A1A</color>
+    <color name="fontPrimary">#FFFFFF</color>
+    <color name="fontSecondary">#555555</color>
 </resources>

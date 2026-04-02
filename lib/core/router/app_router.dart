@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import 'package:montaa/features/auth/presentation/view/landing_page.dart';
 import 'package:montaa/features/main/presentation/view/main_page.dart';
 import 'package:montaa/generated/l10n.dart';
 
@@ -7,7 +8,7 @@ part 'app_router.g.dart';
 
 final GoRouter appRouter = GoRouter(
   routes: $appRoutes,
-  initialLocation: const HomeRoute().location,
+  initialLocation: const LandingPageRoute().location,
 );
 
 @TypedStatefulShellRoute<RootBranch>(
@@ -88,5 +89,15 @@ class ProfileRoute extends GoRouteData with $ProfileRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return Center(child: Text(S.of(context).profileTabLabel));
+  }
+}
+
+@TypedGoRoute<LandingPageRoute>(path: '/landing-page')
+class LandingPageRoute extends GoRouteData with $LandingPageRoute {
+  const LandingPageRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const LandingPage();
   }
 }

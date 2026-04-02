@@ -27,8 +27,6 @@ class $AssetsSvgGen {
 class Assets {
   const Assets._();
 
-  static const String package = 'montaa';
-
   static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
 
@@ -44,14 +42,11 @@ class SvgGenImage {
   final Set<String> flavors;
   final bool _isVecFormat;
 
-  static const String package = 'montaa';
-
   _svg.SvgPicture svg({
     Key? key,
     bool matchTextDirection = false,
     AssetBundle? bundle,
-    @Deprecated('Do not specify package for a generated library asset')
-    String? package = package,
+    String? package,
     double? width,
     double? height,
     BoxFit fit = BoxFit.contain,
@@ -106,5 +101,5 @@ class SvgGenImage {
 
   String get path => _assetName;
 
-  String get keyName => 'packages/montaa/$_assetName';
+  String get keyName => _assetName;
 }

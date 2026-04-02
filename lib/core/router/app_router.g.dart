@@ -6,7 +6,7 @@ part of 'app_router.dart';
 // GoRouterGenerator
 // **************************************************************************
 
-List<RouteBase> get $appRoutes => [$rootBranch];
+List<RouteBase> get $appRoutes => [$rootBranch, $landingPageRoute];
 
 RouteBase get $rootBranch => StatefulShellRouteData.$route(
   factory: $RootBranchExtension._fromState,
@@ -101,6 +101,32 @@ mixin $ProfileRoute on GoRouteData {
 
   @override
   String get location => GoRouteData.$location('/profile');
+
+  @override
+  void go(BuildContext context) => context.go(location);
+
+  @override
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  @override
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  @override
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $landingPageRoute => GoRouteData.$route(
+  path: '/landing-page',
+  factory: $LandingPageRoute._fromState,
+);
+
+mixin $LandingPageRoute on GoRouteData {
+  static LandingPageRoute _fromState(GoRouterState state) =>
+      const LandingPageRoute();
+
+  @override
+  String get location => GoRouteData.$location('/landing-page');
 
   @override
   void go(BuildContext context) => context.go(location);
