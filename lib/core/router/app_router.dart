@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-import 'package:montaa/features/auth/presentation/view/landing_page.dart';
-import 'package:montaa/features/main/presentation/view/main_page.dart';
-import 'package:montaa/generated/l10n.dart';
+import 'package:roam/features/auth/presentation/view/landing_page.dart';
+import 'package:roam/generated/l10n.dart';
+
+import '../../features/main/presentation/view/main_page.dart';
 
 part 'app_router.g.dart';
 

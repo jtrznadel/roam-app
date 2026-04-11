@@ -4,5 +4,13 @@
   "homeTabLabel": "Home",
   "mapTabLabel": "Map",
   "peaksTabLabel": "Peaks",
-  "profileTabLabel": "Profile"
+  "profileTabLabel": "Profile",
+  "landingPageTitle": "Every Peak Becomes An Achievement",
+  "continueWithApple": "Continue with Apple",
+  "continueWithEmail": "Continue with E-mail",
+  "continueWithGoogle": "Continue with Google",
+  "landingTermsText": "By continuing, you agree to the\n",
+  "and" : " & ",
+  "terms": "Terms",
+  "privacyPolicy": "Privacy Policy"
 }

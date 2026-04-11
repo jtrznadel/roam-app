@@ -14,23 +14,26 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
 
-  /// Color: #DAD7CD
-  static const Color background = Color(0xFFDAD7CD);
+  /// Color: #0D0F0B
+  static const Color background = Color(0xFF0D0F0B);
 
   /// Color: #000000
   static const Color black = Color(0xFF000000);
 
-  /// Color: #FFFFFF
-  static const Color fontPrimary = Color(0xFFFFFFFF);
+  /// Color: #FDFDFD
+  static const Color fontPrimary = Color(0xFFFDFDFD);
 
-  /// Color: #555555
-  static const Color fontSecondary = Color(0xFF555555);
+  /// Color: #757670
+  static const Color fontSecondary = Color(0xFF757670);
 
   /// Color: #FFFFFF
   static const Color onPrimary = Color(0xFFFFFFFF);
 
   /// Color: #B3FF45
   static const Color primary = Color(0xFFB3FF45);
+
+  /// Color: #181A14
+  static const Color surface = Color(0xFF181A14);
 
   /// Color: #FFFFFF
   static const Color white = Color(0xFFFFFFFF);

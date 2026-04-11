@@ -22,12 +22,32 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "and": MessageLookupByLibrary.simpleMessage(" i "),
     "appTitle": MessageLookupByLibrary.simpleMessage(
       "marmo - Twój dziennik zdobywcy",
     ),
+    "continueWithApple": MessageLookupByLibrary.simpleMessage(
+      "Kontynuuj z Apple",
+    ),
+    "continueWithEmail": MessageLookupByLibrary.simpleMessage(
+      "Kontynuuj z E-mail",
+    ),
+    "continueWithGoogle": MessageLookupByLibrary.simpleMessage(
+      "Kontynuuj z Google",
+    ),
     "homeTabLabel": MessageLookupByLibrary.simpleMessage("Strona główna"),
+    "landingPageTitle": MessageLookupByLibrary.simpleMessage(
+      "Każdy szczyt staje się osiągnięciem",
+    ),
+    "landingTermsText": MessageLookupByLibrary.simpleMessage(
+      "Kontynuując, akceptujesz\n",
+    ),
     "mapTabLabel": MessageLookupByLibrary.simpleMessage("Mapa"),
     "peaksTabLabel": MessageLookupByLibrary.simpleMessage("Szczyty"),
+    "privacyPolicy": MessageLookupByLibrary.simpleMessage(
+      "Politykę prywatności",
+    ),
     "profileTabLabel": MessageLookupByLibrary.simpleMessage("Profil"),
+    "terms": MessageLookupByLibrary.simpleMessage("Regulamin"),
   };
 }
