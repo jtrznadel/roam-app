@@ -12,5 +12,12 @@
   "landingTermsText": "Kontynuując, akceptujesz\n",
   "terms": "Regulamin",
   "privacyPolicy": "Politykę prywatności",
-  "and": " i "
+  "and": " i ",
+  "continueWithEmailHeadline": "Podaj adres e-mail",
+  "continueWithEmailSubheadline": "Chcielibyśmy wysłać Ci kod, który pozwoli Ci kontynuować",
+  "otpHeadline": "Sprawdź pocztę",
+  "otpSubheadline": "Wysłaliśmy Ci kod 4-cyfrowy kod weryfikacyjny",
+  "otpResend": "Wyślij ponownie",
+  "otpResendTimer": "Wyślij ponownie za {seconds}s",
+  "send": "Wyślij"
 }

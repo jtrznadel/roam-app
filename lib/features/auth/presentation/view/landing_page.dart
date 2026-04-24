@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:roam/core/constants/app_sizes.dart';
+import 'package:roam/core/router/app_router.dart';
 import 'package:roam/core/extensions/context_extension.dart';
 import 'package:roam/core/widgets/app_button.dart';
 import 'package:roam/gen/assets.gen.dart';
@@ -55,7 +56,7 @@ class LandingPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   AppButton(
-                    onPressed: () {},
+                    onPressed: () => const ContinueWithEmailRoute().push(context),
                     text: S.of(context).continueWithEmail,
                   ),
                   const SizedBox(height: 12),

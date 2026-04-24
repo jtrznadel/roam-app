@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(seconds) => "Resend code in ${seconds}s";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "and": MessageLookupByLibrary.simpleMessage(" & "),
@@ -32,6 +34,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "continueWithEmail": MessageLookupByLibrary.simpleMessage(
       "Continue with E-mail",
     ),
+    "continueWithEmailHeadline": MessageLookupByLibrary.simpleMessage(
+      "Enter your E-mail",
+    ),
+    "continueWithEmailSubheadline": MessageLookupByLibrary.simpleMessage(
+      "We would like to send you a verification code, which will allow you to continue.",
+    ),
     "continueWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Continue with Google",
     ),
@@ -43,9 +51,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "By continuing, you agree to the\n",
     ),
     "mapTabLabel": MessageLookupByLibrary.simpleMessage("Map"),
+    "otpHeadline": MessageLookupByLibrary.simpleMessage("Check your inbox"),
+    "otpResend": MessageLookupByLibrary.simpleMessage("Resend code"),
+    "otpResendTimer": m0,
+    "otpSubheadline": MessageLookupByLibrary.simpleMessage(
+      "We have sent a 4-digit verification code",
+    ),
     "peaksTabLabel": MessageLookupByLibrary.simpleMessage("Peaks"),
     "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
     "profileTabLabel": MessageLookupByLibrary.simpleMessage("Profile"),
+    "send": MessageLookupByLibrary.simpleMessage("Send"),
     "terms": MessageLookupByLibrary.simpleMessage("Terms"),
   };
 }

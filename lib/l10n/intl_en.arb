@@ -12,5 +12,12 @@
   "landingTermsText": "By continuing, you agree to the\n",
   "and" : " & ",
   "terms": "Terms",
-  "privacyPolicy": "Privacy Policy"
+  "privacyPolicy": "Privacy Policy",
+  "continueWithEmailHeadline": "Enter your E-mail",
+  "continueWithEmailSubheadline": "We would like to send you a verification code, which will allow you to continue.",
+  "otpHeadline": "Check your inbox",
+  "otpSubheadline": "We have sent a 4-digit verification code",
+  "otpResend": "Resend code",
+  "otpResendTimer": "Resend code in {seconds}s",
+  "send": "Send"
 }

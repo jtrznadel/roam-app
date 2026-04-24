@@ -9,6 +9,11 @@ class AppTheme {
 
   static final _textTheme = GoogleFonts.interTextTheme(_appTheme.textTheme)
       .copyWith(
+        displayMedium: const TextStyle(
+          fontSize: 36,
+          fontWeight: FontWeight.w600,
+          color: AppColors.fontPrimary,
+        ),
         headlineLarge: const TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.w700,

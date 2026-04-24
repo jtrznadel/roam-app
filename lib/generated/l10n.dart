@@ -153,6 +153,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Enter your E-mail`
+  String get continueWithEmailHeadline {
+    return Intl.message(
+      'Enter your E-mail',
+      name: 'continueWithEmailHeadline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We would like to send you a verification code, which will allow you to continue.`
+  String get continueWithEmailSubheadline {
+    return Intl.message(
+      'We would like to send you a verification code, which will allow you to continue.',
+      name: 'continueWithEmailSubheadline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check your inbox`
+  String get otpHeadline {
+    return Intl.message(
+      'Check your inbox',
+      name: 'otpHeadline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We have sent a 4-digit verification code`
+  String get otpSubheadline {
+    return Intl.message(
+      'We have sent a 4-digit verification code',
+      name: 'otpSubheadline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend code`
+  String get otpResend {
+    return Intl.message('Resend code', name: 'otpResend', desc: '', args: []);
+  }
+
+  /// `Resend code in {seconds}s`
+  String otpResendTimer(Object seconds) {
+    return Intl.message(
+      'Resend code in ${seconds}s',
+      name: 'otpResendTimer',
+      desc: '',
+      args: [seconds],
+    );
+  }
+
+  /// `Send`
+  String get send {
+    return Intl.message('Send', name: 'send', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
