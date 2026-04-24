@@ -38,15 +38,16 @@ class $AssetsSvgGen {
   /// File path: assets/svg/google_logo.svg
   SvgGenImage get googleLogo => const SvgGenImage('assets/svg/google_logo.svg');
 
-  /// File path: assets/svg/roam_logo.svg
-  SvgGenImage get roamLogo => const SvgGenImage('assets/svg/roam_logo.svg');
+  /// File path: assets/svg/roam_monogram.svg
+  SvgGenImage get roamMonogram =>
+      const SvgGenImage('assets/svg/roam_monogram.svg');
 
   /// List of all assets
   List<SvgGenImage> get values => [
     appleLogo,
     facebookLogo,
     googleLogo,
-    roamLogo,
+    roamMonogram,
   ];
 }
 
