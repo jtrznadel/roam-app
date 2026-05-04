@@ -13,11 +13,13 @@
   "and" : " & ",
   "terms": "Terms",
   "privacyPolicy": "Privacy Policy",
-  "continueWithEmailHeadline": "Enter your E-mail",
+  "continueWithEmailHeadline": "Enter your e-mail",
   "continueWithEmailSubheadline": "We would like to send you a verification code, which will allow you to continue.",
   "otpHeadline": "Check your inbox",
-  "otpSubheadline": "We have sent a 4-digit verification code",
+  "otpSubheadline": "We have sent a 6-digit verification code to {value}",
   "otpResend": "Resend code",
   "otpResendTimer": "Resend code in {seconds}s",
-  "send": "Send"
+  "send": "Send",
+  "continueLabel": "Continue",
+  "email": "e-mail"
 }

@@ -6,8 +6,11 @@ class AppTextField extends StatefulWidget {
   final String label;
   final String? hint;
   final String? initialValue;
-  final VoidCallback onChanged;
+  final ValueChanged<String> onChanged;
   final bool? autoFocus;
+  final TextInputType? keyboardType;
+  final TextEditingController? controller;
+  final String? errorMessage;
 
   const AppTextField({
     super.key,
@@ -16,6 +19,9 @@ class AppTextField extends StatefulWidget {
     this.initialValue,
     required this.onChanged,
     this.autoFocus = false,
+    this.keyboardType = TextInputType.text,
+    this.controller,
+    this.errorMessage,
   });
 
   @override
@@ -27,12 +33,7 @@ class _AppTextFieldState extends State<AppTextField> {
 
   static final OutlineInputBorder _defaultBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(16),
-    borderSide: const BorderSide(color: Colors.transparent),
-  );
-
-  static final OutlineInputBorder _focusedBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(16),
-    borderSide: const BorderSide(color: AppColors.primary),
+    borderSide: const BorderSide(color: AppColors.border, width: 1.5),
   );
 
   @override
@@ -67,6 +68,9 @@ class _AppTextFieldState extends State<AppTextField> {
           autofocus: widget.autoFocus ?? false,
           focusNode: _focusNode,
           style: context.textTheme.labelLarge,
+          keyboardType: widget.keyboardType,
+          controller: widget.controller,
+          cursorColor: AppColors.fontPrimary,
           decoration: InputDecoration(
             hintText: widget.hint,
             filled: true,
@@ -77,12 +81,21 @@ class _AppTextFieldState extends State<AppTextField> {
             ),
             border: _defaultBorder,
             enabledBorder: _defaultBorder,
-            focusedBorder: _focusedBorder,
+            focusedBorder: _defaultBorder,
           ),
           onChanged: (value) {
-            widget.onChanged();
+            widget.onChanged(value);
           },
         ),
+        if (widget.errorMessage != null) ...[
+          const SizedBox(height: 8),
+          Text(
+            widget.errorMessage!,
+            style: context.textTheme.labelMedium?.copyWith(
+              color: AppColors.error,
+            ),
+          ),
+        ],
       ],
     );
   }

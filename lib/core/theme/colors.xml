@@ -2,10 +2,13 @@
 <resources>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="primary">#B3FF45</color>
+        <color name="primary">#C1F11D</color>
     <color name="onPrimary">#FFFFFF</color>
-    <color name="surface">#181A14</color>
-    <color name="background">#0D0F0B</color>
-    <color name="fontPrimary">#FDFDFD</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="background">#FCFCFC</color>
+    <color name="fontPrimary">#080707</color>
     <color name="fontSecondary">#757670</color>
+    <color name="error">#FF0000</color>
+    <color name="disabled">#757670</color>
+    <color name="border">#B3B0B1</color>
 </resources>

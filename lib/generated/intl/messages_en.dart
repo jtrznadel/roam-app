@@ -22,12 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(seconds) => "Resend code in ${seconds}s";
 
+  static String m1(value) =>
+      "We have sent a 6-digit verification code to ${value}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "and": MessageLookupByLibrary.simpleMessage(" & "),
     "appTitle": MessageLookupByLibrary.simpleMessage(
       "marmo - Your mountaineer\'s journal",
     ),
+    "continueLabel": MessageLookupByLibrary.simpleMessage("Continue"),
     "continueWithApple": MessageLookupByLibrary.simpleMessage(
       "Continue with Apple",
     ),
@@ -35,7 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Continue with E-mail",
     ),
     "continueWithEmailHeadline": MessageLookupByLibrary.simpleMessage(
-      "Enter your E-mail",
+      "Enter your e-mail",
     ),
     "continueWithEmailSubheadline": MessageLookupByLibrary.simpleMessage(
       "We would like to send you a verification code, which will allow you to continue.",
@@ -43,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "continueWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Continue with Google",
     ),
+    "email": MessageLookupByLibrary.simpleMessage("e-mail"),
     "homeTabLabel": MessageLookupByLibrary.simpleMessage("Home"),
     "landingPageTitle": MessageLookupByLibrary.simpleMessage(
       "Every Peak Becomes An Achievement",
@@ -54,9 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "otpHeadline": MessageLookupByLibrary.simpleMessage("Check your inbox"),
     "otpResend": MessageLookupByLibrary.simpleMessage("Resend code"),
     "otpResendTimer": m0,
-    "otpSubheadline": MessageLookupByLibrary.simpleMessage(
-      "We have sent a 4-digit verification code",
-    ),
+    "otpSubheadline": m1,
     "peaksTabLabel": MessageLookupByLibrary.simpleMessage("Peaks"),
     "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
     "profileTabLabel": MessageLookupByLibrary.simpleMessage("Profile"),

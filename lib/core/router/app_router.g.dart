@@ -6,34 +6,34 @@ part of 'app_router.dart';
 // GoRouterGenerator
 // **************************************************************************
 
-List<RouteBase> get $appRoutes => [$authShellRoute, $appShellRoute];
+List<RouteBase> get $appRoutes => [$loginShellRoute, $appShellRoute];
 
-RouteBase get $authShellRoute => ShellRouteData.$route(
-  factory: $AuthShellRouteExtension._fromState,
+RouteBase get $loginShellRoute => ShellRouteData.$route(
+  factory: $LoginShellRouteExtension._fromState,
   routes: [
     GoRouteData.$route(
-      path: '/auth/landing',
-      factory: $AuthLandingRoute._fromState,
+      path: '/login/landing',
+      factory: $LoginLandingRoute._fromState,
     ),
     GoRouteData.$route(
-      path: '/auth/email',
+      path: '/login/email',
       factory: $ContinueWithEmailRoute._fromState,
     ),
-    GoRouteData.$route(path: '/auth/otp', factory: $OtpRoute._fromState),
+    GoRouteData.$route(path: '/login/otp', factory: $OtpRoute._fromState),
   ],
 );
 
-extension $AuthShellRouteExtension on AuthShellRoute {
-  static AuthShellRoute _fromState(GoRouterState state) =>
-      const AuthShellRoute();
+extension $LoginShellRouteExtension on LoginShellRoute {
+  static LoginShellRoute _fromState(GoRouterState state) =>
+      const LoginShellRoute();
 }
 
-mixin $AuthLandingRoute on GoRouteData {
-  static AuthLandingRoute _fromState(GoRouterState state) =>
-      const AuthLandingRoute();
+mixin $LoginLandingRoute on GoRouteData {
+  static LoginLandingRoute _fromState(GoRouterState state) =>
+      const LoginLandingRoute();
 
   @override
-  String get location => GoRouteData.$location('/auth/landing');
+  String get location => GoRouteData.$location('/login/landing');
 
   @override
   void go(BuildContext context) => context.go(location);
@@ -54,7 +54,7 @@ mixin $ContinueWithEmailRoute on GoRouteData {
       const ContinueWithEmailRoute();
 
   @override
-  String get location => GoRouteData.$location('/auth/email');
+  String get location => GoRouteData.$location('/login/email');
 
   @override
   void go(BuildContext context) => context.go(location);
@@ -74,7 +74,7 @@ mixin $OtpRoute on GoRouteData {
   static OtpRoute _fromState(GoRouterState state) => const OtpRoute();
 
   @override
-  String get location => GoRouteData.$location('/auth/otp');
+  String get location => GoRouteData.$location('/login/otp');
 
   @override
   void go(BuildContext context) => context.go(location);

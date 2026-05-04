@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:roam/features/auth/presentation/view/continue_with_email_page.dart';
-import 'package:roam/features/auth/presentation/view/landing_page.dart';
-import 'package:roam/features/auth/presentation/view/otp_page.dart';
+import 'package:roam/core/dependency_injection/dependency_injection.dart';
+import 'package:roam/features/login/presentation/cubit/login_form_cubit.dart';
+import 'package:roam/features/login/presentation/view/continue_with_email_page.dart';
+import 'package:roam/features/login/presentation/view/landing_page.dart';
+import 'package:roam/features/login/presentation/view/otp_page.dart';
 import 'package:roam/generated/l10n.dart';
 
 import '../../features/main/presentation/view/main_page.dart';
@@ -11,22 +14,22 @@ part 'app_router.g.dart';
 
 final GoRouter appRouter = GoRouter(
   routes: $appRoutes,
-  initialLocation: const AuthLandingRoute().location,
+  initialLocation: const LoginLandingRoute().location,
 );
 
-@TypedShellRoute<AuthShellRoute>(
+@TypedShellRoute<LoginShellRoute>(
   routes: <TypedRoute<RouteData>>[
-    TypedGoRoute<AuthLandingRoute>(path: '/auth/landing'),
-    TypedGoRoute<ContinueWithEmailRoute>(path: '/auth/email'),
-    TypedGoRoute<OtpRoute>(path: '/auth/otp'),
+    TypedGoRoute<LoginLandingRoute>(path: '/login/landing'),
+    TypedGoRoute<ContinueWithEmailRoute>(path: '/login/email'),
+    TypedGoRoute<OtpRoute>(path: '/login/otp'),
   ],
 )
-class AuthShellRoute extends ShellRouteData {
-  const AuthShellRoute();
+class LoginShellRoute extends ShellRouteData {
+  const LoginShellRoute();
 
   @override
   Widget builder(BuildContext context, GoRouterState state, Widget navigator) {
-    return navigator;
+    return BlocProvider(create: (_) => sl<LoginFormCubit>(), child: navigator);
   }
 }
 
@@ -111,8 +114,8 @@ class ProfileRoute extends GoRouteData with $ProfileRoute {
   }
 }
 
-class AuthLandingRoute extends GoRouteData with $AuthLandingRoute {
-  const AuthLandingRoute();
+class LoginLandingRoute extends GoRouteData with $LoginLandingRoute {
+  const LoginLandingRoute();
 
   @override
   Widget build(BuildContext context, GoRouterState state) {

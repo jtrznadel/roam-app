@@ -16,7 +16,7 @@ class LandingPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(Assets.png.roamLandingBg.path),
+            image: AssetImage(Assets.png.roamBg.path),
             fit: BoxFit.cover,
             alignment: Alignment.topCenter,
           ),

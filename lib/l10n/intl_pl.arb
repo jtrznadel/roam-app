@@ -16,8 +16,11 @@
   "continueWithEmailHeadline": "Podaj adres e-mail",
   "continueWithEmailSubheadline": "Chcielibyśmy wysłać Ci kod, który pozwoli Ci kontynuować",
   "otpHeadline": "Sprawdź pocztę",
-  "otpSubheadline": "Wysłaliśmy Ci kod 4-cyfrowy kod weryfikacyjny",
+  "otpSubheadline": "Wysłaliśmy Ci kod 6-cyfrowy kod weryfikacyjny na podany adres {value}",
   "otpResend": "Wyślij ponownie",
   "otpResendTimer": "Wyślij ponownie za {seconds}s",
-  "send": "Wyślij"
+  "send": "Wyślij",
+  "continueLabel": "Kontynuuj",
+  "email": "e-mail"
+
 }

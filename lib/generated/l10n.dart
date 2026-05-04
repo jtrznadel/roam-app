@@ -154,10 +154,10 @@ class S {
     );
   }
 
-  /// `Enter your E-mail`
+  /// `Enter your e-mail`
   String get continueWithEmailHeadline {
     return Intl.message(
-      'Enter your E-mail',
+      'Enter your e-mail',
       name: 'continueWithEmailHeadline',
       desc: '',
       args: [],
@@ -184,13 +184,13 @@ class S {
     );
   }
 
-  /// `We have sent a 4-digit verification code`
-  String get otpSubheadline {
+  /// `We have sent a 6-digit verification code to {value}`
+  String otpSubheadline(Object value) {
     return Intl.message(
-      'We have sent a 4-digit verification code',
+      'We have sent a 6-digit verification code to $value',
       name: 'otpSubheadline',
       desc: '',
-      args: [],
+      args: [value],
     );
   }
 
@@ -212,6 +212,16 @@ class S {
   /// `Send`
   String get send {
     return Intl.message('Send', name: 'send', desc: '', args: []);
+  }
+
+  /// `Continue`
+  String get continueLabel {
+    return Intl.message('Continue', name: 'continueLabel', desc: '', args: []);
+  }
+
+  /// `e-mail`
+  String get email {
+    return Intl.message('e-mail', name: 'email', desc: '', args: []);
   }
 }
 

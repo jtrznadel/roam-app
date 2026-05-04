@@ -22,12 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(seconds) => "Wyślij ponownie za ${seconds}s";
 
+  static String m1(value) =>
+      "Wysłaliśmy Ci kod 6-cyfrowy kod weryfikacyjny na podany adres ${value}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "and": MessageLookupByLibrary.simpleMessage(" i "),
     "appTitle": MessageLookupByLibrary.simpleMessage(
       "marmo - Twój dziennik zdobywcy",
     ),
+    "continueLabel": MessageLookupByLibrary.simpleMessage("Kontynuuj"),
     "continueWithApple": MessageLookupByLibrary.simpleMessage(
       "Kontynuuj z Apple",
     ),
@@ -43,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "continueWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Kontynuuj z Google",
     ),
+    "email": MessageLookupByLibrary.simpleMessage("e-mail"),
     "homeTabLabel": MessageLookupByLibrary.simpleMessage("Strona główna"),
     "landingPageTitle": MessageLookupByLibrary.simpleMessage(
       "Każdy szczyt staje się osiągnięciem",
@@ -54,9 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "otpHeadline": MessageLookupByLibrary.simpleMessage("Sprawdź pocztę"),
     "otpResend": MessageLookupByLibrary.simpleMessage("Wyślij ponownie"),
     "otpResendTimer": m0,
-    "otpSubheadline": MessageLookupByLibrary.simpleMessage(
-      "Wysłaliśmy Ci kod 4-cyfrowy kod weryfikacyjny",
-    ),
+    "otpSubheadline": m1,
     "peaksTabLabel": MessageLookupByLibrary.simpleMessage("Szczyty"),
     "privacyPolicy": MessageLookupByLibrary.simpleMessage(
       "Politykę prywatności",
