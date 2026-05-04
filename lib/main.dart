@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:roam/core/dependency_injection/dependency_injection.dart';
 import 'package:roam/core/theme/app_theme.dart';
+import 'package:roam/flavors.dart';
 
 import 'core/router/app_router.dart';
 import 'generated/l10n.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      title: 'roam',
+      title: F.instance.appName,
       theme: AppTheme.defaultTheme,
     );
   }
