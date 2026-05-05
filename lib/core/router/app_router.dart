@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:roam/core/dependency_injection/dependency_injection.dart';
-import 'package:roam/features/login/presentation/cubit/login_form_cubit.dart';
-import 'package:roam/features/login/presentation/view/continue_with_email_page.dart';
-import 'package:roam/features/login/presentation/view/landing_page.dart';
-import 'package:roam/features/login/presentation/view/otp_page.dart';
+import 'package:roam/features/auth/presentation/cubit/login_form_cubit.dart';
+import 'package:roam/features/auth/presentation/view/continue_with_email_page.dart';
+import 'package:roam/features/auth/presentation/view/landing_page.dart';
+import 'package:roam/features/auth/presentation/view/otp_page.dart';
 import 'package:roam/generated/l10n.dart';
 
 import '../../features/main/presentation/view/main_page.dart';

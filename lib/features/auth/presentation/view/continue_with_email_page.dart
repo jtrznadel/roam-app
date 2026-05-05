@@ -65,7 +65,7 @@ class ContinueWithEmailPage extends StatelessWidget {
                 AppButton(
                   onPressed: canSubmitEmail
                       ? () {
-                          context.read<LoginFormCubit>().submitEmail();
+                          context.read<LoginFormCubit>().requestEmailOtp();
                         }
                       : null,
                   text: S.of(context).continueLabel,

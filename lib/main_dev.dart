@@ -1,9 +1,15 @@
-import 'package:roam/flavors.dart';
+import 'package:roam/core/config/app_config.dart';
 
 import 'main.dart' as app;
 
 Future<void> main() async {
-  F.instance = F(flavor: Flavor.dev, appName: '[DEV] roam');
+  AppConfig.instance = const AppConfig(
+    flavor: Flavor.dev,
+    title: '[DEV] roam',
+    apiUrl: 'https://roam-api-7zgz.onrender.com/',
+    enableLogs: true,
+    showDevBanner: true,
+  );
 
   await app.main();
 }
