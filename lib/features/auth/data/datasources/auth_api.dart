@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:roam/features/auth/data/models/auth_tokens_response.dart';
+import 'package:roam/features/auth/data/models/auth_session_model.dart';
 import 'package:roam/features/auth/data/models/request_email_otp_request.dart';
 import 'package:roam/features/auth/data/models/request_email_otp_response.dart';
 import 'package:roam/features/auth/data/models/verify_email_otp_request.dart';
@@ -17,7 +17,7 @@ abstract class AuthApi {
   );
 
   @POST('/api/v1/auth/email/otp/verify')
-  Future<AuthTokensResponse> verifyEmailOtp(
+  Future<AuthSessionModel> verifyEmailOtp(
     @Body() VerifyEmailOtpRequest verifyEmailOtpRequest,
   );
 }

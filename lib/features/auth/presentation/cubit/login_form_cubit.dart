@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:roam/core/error/failure.dart';
+import 'package:roam/features/auth/domain/entities/auth_session_entity.dart';
 import 'package:roam/features/auth/domain/usecases/request_email_otp_usecase.dart';
 import 'package:roam/features/auth/domain/usecases/verify_email_otp_usecase.dart';
 
@@ -91,8 +92,10 @@ class LoginFormCubit extends Cubit<LoginFormState> {
           ),
         );
       },
-      (_) {
-        emit(state.copyWith(status: LoginStatus.success, error: null));
+      (session) {
+        emit(
+          state.copyWith(status: LoginStatus.success, verifiedSession: session),
+        );
       },
     );
   }
@@ -159,6 +162,10 @@ class LoginFormCubit extends Cubit<LoginFormState> {
 
       emit(state.copyWith(resendSecondsLeft: nextSeconds));
     });
+  }
+
+  void clearVerifiedSession() {
+    emit(state.copyWith(verifiedSession: null, status: LoginStatus.idle));
   }
 
   @override

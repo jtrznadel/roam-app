@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'auth_tokens_response.dart';
+part of 'auth_session_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-AuthTokensResponse _$AuthTokensResponseFromJson(Map<String, dynamic> json) =>
-    AuthTokensResponse(
+AuthSessionModel _$AuthSessionModelFromJson(Map<String, dynamic> json) =>
+    AuthSessionModel(
       accessToken: json['accessToken'] as String,
       refreshToken: json['refreshToken'] as String,
     );
 
-Map<String, dynamic> _$AuthTokensResponseToJson(AuthTokensResponse instance) =>
+Map<String, dynamic> _$AuthSessionModelToJson(AuthSessionModel instance) =>
     <String, dynamic>{
       'accessToken': instance.accessToken,
       'refreshToken': instance.refreshToken,

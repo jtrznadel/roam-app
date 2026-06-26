@@ -50,7 +50,7 @@ class _AuthApi implements AuthApi {
   }
 
   @override
-  Future<AuthTokensResponse> verifyEmailOtp(
+  Future<AuthSessionModel> verifyEmailOtp(
     VerifyEmailOtpRequest verifyEmailOtpRequest,
   ) async {
     final _extra = <String, dynamic>{};
@@ -58,7 +58,7 @@ class _AuthApi implements AuthApi {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(verifyEmailOtpRequest.toJson());
-    final _options = _setStreamType<AuthTokensResponse>(
+    final _options = _setStreamType<AuthSessionModel>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -69,9 +69,9 @@ class _AuthApi implements AuthApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AuthTokensResponse _value;
+    late AuthSessionModel _value;
     try {
-      _value = AuthTokensResponse.fromJson(_result.data!);
+      _value = AuthSessionModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options, response: _result);
       rethrow;

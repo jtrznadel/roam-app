@@ -13,6 +13,7 @@ abstract class LoginFormState with _$LoginFormState {
     @Default(0) int resendSecondsLeft,
     @Default(LoginStep.email) LoginStep step,
     @Default(LoginStatus.idle) LoginStatus status,
+    AuthSessionEntity? verifiedSession,
     String? error,
   }) = _LoginFormState;
 

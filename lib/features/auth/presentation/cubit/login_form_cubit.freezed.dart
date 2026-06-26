@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$LoginFormState {
 
- String get email; String get otp; String get otpEmail; int get resendSecondsLeft; LoginStep get step; LoginStatus get status; String? get error;
+ String get email; String get otp; String get otpEmail; int get resendSecondsLeft; LoginStep get step; LoginStatus get status; AuthSessionEntity? get verifiedSession; String? get error;
 /// Create a copy of LoginFormState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $LoginFormStateCopyWith<LoginFormState> get copyWith => _$LoginFormStateCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoginFormState&&(identical(other.email, email) || other.email == email)&&(identical(other.otp, otp) || other.otp == otp)&&(identical(other.otpEmail, otpEmail) || other.otpEmail == otpEmail)&&(identical(other.resendSecondsLeft, resendSecondsLeft) || other.resendSecondsLeft == resendSecondsLeft)&&(identical(other.step, step) || other.step == step)&&(identical(other.status, status) || other.status == status)&&(identical(other.error, error) || other.error == error));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoginFormState&&(identical(other.email, email) || other.email == email)&&(identical(other.otp, otp) || other.otp == otp)&&(identical(other.otpEmail, otpEmail) || other.otpEmail == otpEmail)&&(identical(other.resendSecondsLeft, resendSecondsLeft) || other.resendSecondsLeft == resendSecondsLeft)&&(identical(other.step, step) || other.step == step)&&(identical(other.status, status) || other.status == status)&&(identical(other.verifiedSession, verifiedSession) || other.verifiedSession == verifiedSession)&&(identical(other.error, error) || other.error == error));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,email,otp,otpEmail,resendSecondsLeft,step,status,error);
+int get hashCode => Object.hash(runtimeType,email,otp,otpEmail,resendSecondsLeft,step,status,verifiedSession,error);
 
 @override
 String toString() {
-  return 'LoginFormState(email: $email, otp: $otp, otpEmail: $otpEmail, resendSecondsLeft: $resendSecondsLeft, step: $step, status: $status, error: $error)';
+  return 'LoginFormState(email: $email, otp: $otp, otpEmail: $otpEmail, resendSecondsLeft: $resendSecondsLeft, step: $step, status: $status, verifiedSession: $verifiedSession, error: $error)';
 }
 
 
@@ -45,11 +45,11 @@ abstract mixin class $LoginFormStateCopyWith<$Res>  {
   factory $LoginFormStateCopyWith(LoginFormState value, $Res Function(LoginFormState) _then) = _$LoginFormStateCopyWithImpl;
 @useResult
 $Res call({
- String email, String otp, String otpEmail, int resendSecondsLeft, LoginStep step, LoginStatus status, String? error
+ String email, String otp, String otpEmail, int resendSecondsLeft, LoginStep step, LoginStatus status, AuthSessionEntity? verifiedSession, String? error
 });
 
 
-
+$AuthSessionEntityCopyWith<$Res>? get verifiedSession;
 
 }
 /// @nodoc
@@ -62,7 +62,7 @@ class _$LoginFormStateCopyWithImpl<$Res>
 
 /// Create a copy of LoginFormState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? email = null,Object? otp = null,Object? otpEmail = null,Object? resendSecondsLeft = null,Object? step = null,Object? status = null,Object? error = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? email = null,Object? otp = null,Object? otpEmail = null,Object? resendSecondsLeft = null,Object? step = null,Object? status = null,Object? verifiedSession = freezed,Object? error = freezed,}) {
   return _then(_self.copyWith(
 email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String,otp: null == otp ? _self.otp : otp // ignore: cast_nullable_to_non_nullable
@@ -70,11 +70,24 @@ as String,otpEmail: null == otpEmail ? _self.otpEmail : otpEmail // ignore: cast
 as String,resendSecondsLeft: null == resendSecondsLeft ? _self.resendSecondsLeft : resendSecondsLeft // ignore: cast_nullable_to_non_nullable
 as int,step: null == step ? _self.step : step // ignore: cast_nullable_to_non_nullable
 as LoginStep,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as LoginStatus,error: freezed == error ? _self.error : error // ignore: cast_nullable_to_non_nullable
+as LoginStatus,verifiedSession: freezed == verifiedSession ? _self.verifiedSession : verifiedSession // ignore: cast_nullable_to_non_nullable
+as AuthSessionEntity?,error: freezed == error ? _self.error : error // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
+/// Create a copy of LoginFormState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AuthSessionEntityCopyWith<$Res>? get verifiedSession {
+    if (_self.verifiedSession == null) {
+    return null;
+  }
 
+  return $AuthSessionEntityCopyWith<$Res>(_self.verifiedSession!, (value) {
+    return _then(_self.copyWith(verifiedSession: value));
+  });
+}
 }
 
 
@@ -156,10 +169,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String email,  String otp,  String otpEmail,  int resendSecondsLeft,  LoginStep step,  LoginStatus status,  String? error)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String email,  String otp,  String otpEmail,  int resendSecondsLeft,  LoginStep step,  LoginStatus status,  AuthSessionEntity? verifiedSession,  String? error)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _LoginFormState() when $default != null:
-return $default(_that.email,_that.otp,_that.otpEmail,_that.resendSecondsLeft,_that.step,_that.status,_that.error);case _:
+return $default(_that.email,_that.otp,_that.otpEmail,_that.resendSecondsLeft,_that.step,_that.status,_that.verifiedSession,_that.error);case _:
   return orElse();
 
 }
@@ -177,10 +190,10 @@ return $default(_that.email,_that.otp,_that.otpEmail,_that.resendSecondsLeft,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String email,  String otp,  String otpEmail,  int resendSecondsLeft,  LoginStep step,  LoginStatus status,  String? error)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String email,  String otp,  String otpEmail,  int resendSecondsLeft,  LoginStep step,  LoginStatus status,  AuthSessionEntity? verifiedSession,  String? error)  $default,) {final _that = this;
 switch (_that) {
 case _LoginFormState():
-return $default(_that.email,_that.otp,_that.otpEmail,_that.resendSecondsLeft,_that.step,_that.status,_that.error);case _:
+return $default(_that.email,_that.otp,_that.otpEmail,_that.resendSecondsLeft,_that.step,_that.status,_that.verifiedSession,_that.error);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -197,10 +210,10 @@ return $default(_that.email,_that.otp,_that.otpEmail,_that.resendSecondsLeft,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String email,  String otp,  String otpEmail,  int resendSecondsLeft,  LoginStep step,  LoginStatus status,  String? error)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String email,  String otp,  String otpEmail,  int resendSecondsLeft,  LoginStep step,  LoginStatus status,  AuthSessionEntity? verifiedSession,  String? error)?  $default,) {final _that = this;
 switch (_that) {
 case _LoginFormState() when $default != null:
-return $default(_that.email,_that.otp,_that.otpEmail,_that.resendSecondsLeft,_that.step,_that.status,_that.error);case _:
+return $default(_that.email,_that.otp,_that.otpEmail,_that.resendSecondsLeft,_that.step,_that.status,_that.verifiedSession,_that.error);case _:
   return null;
 
 }
@@ -212,7 +225,7 @@ return $default(_that.email,_that.otp,_that.otpEmail,_that.resendSecondsLeft,_th
 
 
 class _LoginFormState extends LoginFormState {
-  const _LoginFormState({this.email = '', this.otp = '', this.otpEmail = '', this.resendSecondsLeft = 0, this.step = LoginStep.email, this.status = LoginStatus.idle, this.error}): super._();
+  const _LoginFormState({this.email = '', this.otp = '', this.otpEmail = '', this.resendSecondsLeft = 0, this.step = LoginStep.email, this.status = LoginStatus.idle, this.verifiedSession, this.error}): super._();
   
 
 @override@JsonKey() final  String email;
@@ -221,6 +234,7 @@ class _LoginFormState extends LoginFormState {
 @override@JsonKey() final  int resendSecondsLeft;
 @override@JsonKey() final  LoginStep step;
 @override@JsonKey() final  LoginStatus status;
+@override final  AuthSessionEntity? verifiedSession;
 @override final  String? error;
 
 /// Create a copy of LoginFormState
@@ -233,16 +247,16 @@ _$LoginFormStateCopyWith<_LoginFormState> get copyWith => __$LoginFormStateCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LoginFormState&&(identical(other.email, email) || other.email == email)&&(identical(other.otp, otp) || other.otp == otp)&&(identical(other.otpEmail, otpEmail) || other.otpEmail == otpEmail)&&(identical(other.resendSecondsLeft, resendSecondsLeft) || other.resendSecondsLeft == resendSecondsLeft)&&(identical(other.step, step) || other.step == step)&&(identical(other.status, status) || other.status == status)&&(identical(other.error, error) || other.error == error));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LoginFormState&&(identical(other.email, email) || other.email == email)&&(identical(other.otp, otp) || other.otp == otp)&&(identical(other.otpEmail, otpEmail) || other.otpEmail == otpEmail)&&(identical(other.resendSecondsLeft, resendSecondsLeft) || other.resendSecondsLeft == resendSecondsLeft)&&(identical(other.step, step) || other.step == step)&&(identical(other.status, status) || other.status == status)&&(identical(other.verifiedSession, verifiedSession) || other.verifiedSession == verifiedSession)&&(identical(other.error, error) || other.error == error));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,email,otp,otpEmail,resendSecondsLeft,step,status,error);
+int get hashCode => Object.hash(runtimeType,email,otp,otpEmail,resendSecondsLeft,step,status,verifiedSession,error);
 
 @override
 String toString() {
-  return 'LoginFormState(email: $email, otp: $otp, otpEmail: $otpEmail, resendSecondsLeft: $resendSecondsLeft, step: $step, status: $status, error: $error)';
+  return 'LoginFormState(email: $email, otp: $otp, otpEmail: $otpEmail, resendSecondsLeft: $resendSecondsLeft, step: $step, status: $status, verifiedSession: $verifiedSession, error: $error)';
 }
 
 
@@ -253,11 +267,11 @@ abstract mixin class _$LoginFormStateCopyWith<$Res> implements $LoginFormStateCo
   factory _$LoginFormStateCopyWith(_LoginFormState value, $Res Function(_LoginFormState) _then) = __$LoginFormStateCopyWithImpl;
 @override @useResult
 $Res call({
- String email, String otp, String otpEmail, int resendSecondsLeft, LoginStep step, LoginStatus status, String? error
+ String email, String otp, String otpEmail, int resendSecondsLeft, LoginStep step, LoginStatus status, AuthSessionEntity? verifiedSession, String? error
 });
 
 
-
+@override $AuthSessionEntityCopyWith<$Res>? get verifiedSession;
 
 }
 /// @nodoc
@@ -270,7 +284,7 @@ class __$LoginFormStateCopyWithImpl<$Res>
 
 /// Create a copy of LoginFormState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? email = null,Object? otp = null,Object? otpEmail = null,Object? resendSecondsLeft = null,Object? step = null,Object? status = null,Object? error = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? email = null,Object? otp = null,Object? otpEmail = null,Object? resendSecondsLeft = null,Object? step = null,Object? status = null,Object? verifiedSession = freezed,Object? error = freezed,}) {
   return _then(_LoginFormState(
 email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String,otp: null == otp ? _self.otp : otp // ignore: cast_nullable_to_non_nullable
@@ -278,12 +292,25 @@ as String,otpEmail: null == otpEmail ? _self.otpEmail : otpEmail // ignore: cast
 as String,resendSecondsLeft: null == resendSecondsLeft ? _self.resendSecondsLeft : resendSecondsLeft // ignore: cast_nullable_to_non_nullable
 as int,step: null == step ? _self.step : step // ignore: cast_nullable_to_non_nullable
 as LoginStep,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as LoginStatus,error: freezed == error ? _self.error : error // ignore: cast_nullable_to_non_nullable
+as LoginStatus,verifiedSession: freezed == verifiedSession ? _self.verifiedSession : verifiedSession // ignore: cast_nullable_to_non_nullable
+as AuthSessionEntity?,error: freezed == error ? _self.error : error // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
 
+/// Create a copy of LoginFormState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AuthSessionEntityCopyWith<$Res>? get verifiedSession {
+    if (_self.verifiedSession == null) {
+    return null;
+  }
 
+  return $AuthSessionEntityCopyWith<$Res>(_self.verifiedSession!, (value) {
+    return _then(_self.copyWith(verifiedSession: value));
+  });
+}
 }
 
 // dart format on

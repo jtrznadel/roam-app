@@ -2,20 +2,73 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:roam/core/dependency_injection/dependency_injection.dart';
+import 'package:roam/core/router/app_router_refresh_listenable.dart';
+import 'package:roam/features/auth/presentation/cubit/auth_session_cubit.dart';
 import 'package:roam/features/auth/presentation/cubit/login_form_cubit.dart';
+import 'package:roam/features/auth/presentation/view/bootstrap_page.dart';
 import 'package:roam/features/auth/presentation/view/continue_with_email_page.dart';
 import 'package:roam/features/auth/presentation/view/landing_page.dart';
 import 'package:roam/features/auth/presentation/view/otp_page.dart';
+import 'package:roam/features/main/presentation/view/main_page.dart';
 import 'package:roam/generated/l10n.dart';
-
-import '../../features/main/presentation/view/main_page.dart';
 
 part 'app_router.g.dart';
 
-final GoRouter appRouter = GoRouter(
-  routes: $appRoutes,
-  initialLocation: const LoginLandingRoute().location,
-);
+class AppRouter {
+  final AuthSessionCubit _authSessionCubit;
+
+  AppRouter({required AuthSessionCubit authSessionCubit})
+    : _authSessionCubit = authSessionCubit;
+
+  late final GoRouter router = GoRouter(
+    routes: $appRoutes,
+    initialLocation: const BootstrapRoute().location,
+    refreshListenable: AppRouterRefreshListenable(_authSessionCubit.stream),
+    redirect: _redirect,
+  );
+
+  String? _redirect(BuildContext context, GoRouterState state) {
+    final sessionState = _authSessionCubit.state;
+
+    final isBootstrapping = sessionState.isBootstrapping;
+    final isAuthenticated = sessionState.isAuthenticated;
+    final isBootstrapRoute =
+        state.matchedLocation == const BootstrapRoute().location;
+    final isLoginRoute = state.matchedLocation.startsWith('/login');
+
+    if (isBootstrapping) {
+      if (isBootstrapRoute) {
+        return null;
+      }
+
+      return const BootstrapRoute().location;
+    }
+
+    if (!isAuthenticated) {
+      if (isLoginRoute) {
+        return null;
+      }
+
+      return const LoginLandingRoute().location;
+    }
+
+    if (isBootstrapRoute || isLoginRoute) {
+      return const HomeRoute().location;
+    }
+
+    return null;
+  }
+}
+
+@TypedGoRoute<BootstrapRoute>(path: '/bootstrap')
+class BootstrapRoute extends GoRouteData with $BootstrapRoute {
+  const BootstrapRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const BootstrapPage();
+  }
+}
 
 @TypedShellRoute<LoginShellRoute>(
   routes: <TypedRoute<RouteData>>[
