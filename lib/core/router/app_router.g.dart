@@ -6,10 +6,120 @@ part of 'app_router.dart';
 // GoRouterGenerator
 // **************************************************************************
 
-List<RouteBase> get $appRoutes => [$rootBranch];
+List<RouteBase> get $appRoutes => [
+  $bootstrapRoute,
+  $loginShellRoute,
+  $appShellRoute,
+];
 
-RouteBase get $rootBranch => StatefulShellRouteData.$route(
-  factory: $RootBranchExtension._fromState,
+RouteBase get $bootstrapRoute =>
+    GoRouteData.$route(path: '/bootstrap', factory: $BootstrapRoute._fromState);
+
+mixin $BootstrapRoute on GoRouteData {
+  static BootstrapRoute _fromState(GoRouterState state) =>
+      const BootstrapRoute();
+
+  @override
+  String get location => GoRouteData.$location('/bootstrap');
+
+  @override
+  void go(BuildContext context) => context.go(location);
+
+  @override
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  @override
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  @override
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $loginShellRoute => ShellRouteData.$route(
+  factory: $LoginShellRouteExtension._fromState,
+  routes: [
+    GoRouteData.$route(
+      path: '/login/landing',
+      factory: $LoginLandingRoute._fromState,
+    ),
+    GoRouteData.$route(
+      path: '/login/email',
+      factory: $ContinueWithEmailRoute._fromState,
+    ),
+    GoRouteData.$route(path: '/login/otp', factory: $OtpRoute._fromState),
+  ],
+);
+
+extension $LoginShellRouteExtension on LoginShellRoute {
+  static LoginShellRoute _fromState(GoRouterState state) =>
+      const LoginShellRoute();
+}
+
+mixin $LoginLandingRoute on GoRouteData {
+  static LoginLandingRoute _fromState(GoRouterState state) =>
+      const LoginLandingRoute();
+
+  @override
+  String get location => GoRouteData.$location('/login/landing');
+
+  @override
+  void go(BuildContext context) => context.go(location);
+
+  @override
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  @override
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  @override
+  void replace(BuildContext context) => context.replace(location);
+}
+
+mixin $ContinueWithEmailRoute on GoRouteData {
+  static ContinueWithEmailRoute _fromState(GoRouterState state) =>
+      const ContinueWithEmailRoute();
+
+  @override
+  String get location => GoRouteData.$location('/login/email');
+
+  @override
+  void go(BuildContext context) => context.go(location);
+
+  @override
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  @override
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  @override
+  void replace(BuildContext context) => context.replace(location);
+}
+
+mixin $OtpRoute on GoRouteData {
+  static OtpRoute _fromState(GoRouterState state) => const OtpRoute();
+
+  @override
+  String get location => GoRouteData.$location('/login/otp');
+
+  @override
+  void go(BuildContext context) => context.go(location);
+
+  @override
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  @override
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  @override
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $appShellRoute => StatefulShellRouteData.$route(
+  factory: $AppShellRouteExtension._fromState,
   branches: [
     StatefulShellBranchData.$branch(
       routes: [
@@ -32,8 +142,8 @@ RouteBase get $rootBranch => StatefulShellRouteData.$route(
   ],
 );
 
-extension $RootBranchExtension on RootBranch {
-  static RootBranch _fromState(GoRouterState state) => const RootBranch();
+extension $AppShellRouteExtension on AppShellRoute {
+  static AppShellRoute _fromState(GoRouterState state) => const AppShellRoute();
 }
 
 mixin $HomeRoute on GoRouteData {

@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:montaa/gen/colors.gen.dart';
+import 'package:roam/gen/colors.gen.dart';
 
 class AppTheme {
   const AppTheme._();
 
-  static final _appTheme = ThemeData(brightness: Brightness.dark);
+  static final _appTheme = ThemeData(brightness: Brightness.light);
 
   static final _textTheme = GoogleFonts.interTextTheme(_appTheme.textTheme)
       .copyWith(
+        displayMedium: const TextStyle(
+          fontSize: 36,
+          fontWeight: FontWeight.w600,
+          color: AppColors.fontPrimary,
+        ),
         headlineLarge: const TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.w700,

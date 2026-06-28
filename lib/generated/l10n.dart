@@ -83,6 +83,146 @@ class S {
   String get profileTabLabel {
     return Intl.message('Profile', name: 'profileTabLabel', desc: '', args: []);
   }
+
+  /// `Every Peak Becomes An Achievement`
+  String get landingPageTitle {
+    return Intl.message(
+      'Every Peak Becomes An Achievement',
+      name: 'landingPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue with Apple`
+  String get continueWithApple {
+    return Intl.message(
+      'Continue with Apple',
+      name: 'continueWithApple',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue with E-mail`
+  String get continueWithEmail {
+    return Intl.message(
+      'Continue with E-mail',
+      name: 'continueWithEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue with Google`
+  String get continueWithGoogle {
+    return Intl.message(
+      'Continue with Google',
+      name: 'continueWithGoogle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By continuing, you agree to the\n`
+  String get landingTermsText {
+    return Intl.message(
+      'By continuing, you agree to the\n',
+      name: 'landingTermsText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` & `
+  String get and {
+    return Intl.message(' & ', name: 'and', desc: '', args: []);
+  }
+
+  /// `Terms`
+  String get terms {
+    return Intl.message('Terms', name: 'terms', desc: '', args: []);
+  }
+
+  /// `Privacy Policy`
+  String get privacyPolicy {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'privacyPolicy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your e-mail`
+  String get continueWithEmailHeadline {
+    return Intl.message(
+      'Enter your e-mail',
+      name: 'continueWithEmailHeadline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We would like to send you a verification code, which will allow you to continue.`
+  String get continueWithEmailSubheadline {
+    return Intl.message(
+      'We would like to send you a verification code, which will allow you to continue.',
+      name: 'continueWithEmailSubheadline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check your inbox`
+  String get otpHeadline {
+    return Intl.message(
+      'Check your inbox',
+      name: 'otpHeadline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We have sent a 6-digit verification code to {value}`
+  String otpSubheadline(Object value) {
+    return Intl.message(
+      'We have sent a 6-digit verification code to $value',
+      name: 'otpSubheadline',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `Resend code`
+  String get otpResend {
+    return Intl.message('Resend code', name: 'otpResend', desc: '', args: []);
+  }
+
+  /// `Resend code in {seconds}s`
+  String otpResendTimer(Object seconds) {
+    return Intl.message(
+      'Resend code in ${seconds}s',
+      name: 'otpResendTimer',
+      desc: '',
+      args: [seconds],
+    );
+  }
+
+  /// `Send`
+  String get send {
+    return Intl.message('Send', name: 'send', desc: '', args: []);
+  }
+
+  /// `Continue`
+  String get continueLabel {
+    return Intl.message('Continue', name: 'continueLabel', desc: '', args: []);
+  }
+
+  /// `e-mail`
+  String get email {
+    return Intl.message('e-mail', name: 'email', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

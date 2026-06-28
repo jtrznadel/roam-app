@@ -4,5 +4,23 @@
   "homeTabLabel": "Strona główna",
   "mapTabLabel": "Mapa",
   "peaksTabLabel": "Szczyty",
-  "profileTabLabel": "Profil"
+  "profileTabLabel": "Profil",
+  "landingPageTitle": "Każdy szczyt staje się osiągnięciem",
+  "continueWithApple": "Kontynuuj z Apple",
+  "continueWithEmail": "Kontynuuj z E-mail",
+  "continueWithGoogle": "Kontynuuj z Google",
+  "landingTermsText": "Kontynuując, akceptujesz\n",
+  "terms": "Regulamin",
+  "privacyPolicy": "Politykę prywatności",
+  "and": " i ",
+  "continueWithEmailHeadline": "Podaj adres e-mail",
+  "continueWithEmailSubheadline": "Chcielibyśmy wysłać Ci kod, który pozwoli Ci kontynuować",
+  "otpHeadline": "Sprawdź pocztę",
+  "otpSubheadline": "Wysłaliśmy Ci kod 6-cyfrowy kod weryfikacyjny na podany adres {value}",
+  "otpResend": "Wyślij ponownie",
+  "otpResendTimer": "Wyślij ponownie za {seconds}s",
+  "send": "Wyślij",
+  "continueLabel": "Kontynuuj",
+  "email": "e-mail"
+
 }

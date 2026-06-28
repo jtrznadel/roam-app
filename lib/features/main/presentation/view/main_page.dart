@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:montaa/generated/l10n.dart';
+import 'package:roam/core/extensions/context_extension.dart';
+import 'package:roam/gen/assets.gen.dart';
+import 'package:roam/gen/colors.gen.dart';
+import 'package:roam/generated/l10n.dart';
 
 class MainPage extends StatelessWidget {
   final StatefulNavigationShell navigationShell;
@@ -17,31 +21,40 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final destinations = [
-      NavigationDestination(
+    final tabs = [
+      GlassTab(
         icon: const Icon(LucideIcons.house),
         label: S.of(context).homeTabLabel,
       ),
-      NavigationDestination(
+      GlassTab(
         icon: const Icon(LucideIcons.mapPin),
         label: S.of(context).mapTabLabel,
       ),
-      NavigationDestination(
+      GlassTab(
         icon: const Icon(LucideIcons.mountain),
         label: S.of(context).peaksTabLabel,
       ),
-      NavigationDestination(
+      GlassTab(
         icon: const Icon(LucideIcons.user),
         label: S.of(context).profileTabLabel,
       ),
     ];
 
-    return Scaffold(
+    return GlassScaffold(
       body: navigationShell,
-      bottomNavigationBar: NavigationBar(
+      background: Image.asset(Assets.png.roamMainGradient.path, fit: .cover),
+      bottomBar: GlassTabBar.bottom(
+        tabs: tabs,
         selectedIndex: navigationShell.currentIndex,
-        onDestinationSelected: _onTap,
-        destinations: destinations,
+        onTabSelected: _onTap,
+        textStyle: context.textTheme.labelSmall?.copyWith(
+          color: AppColors.fontSecondary,
+        ),
+        selectedLabelStyle: context.textTheme.labelSmall?.copyWith(
+          color: AppColors.fontPrimary,
+        ),
+        unselectedIconColor: AppColors.fontSecondary,
+        selectedIconColor: AppColors.fontPrimary,
       ),
     );
   }

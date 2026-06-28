@@ -14,22 +14,157 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart' as _svg;
 import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
+class $AssetsPngGen {
+  const $AssetsPngGen();
+
+  /// File path: assets/png/roam_bg.png
+  AssetGenImage get roamBg => const AssetGenImage('assets/png/roam_bg.png');
+
+  /// File path: assets/png/roam_gradient.png
+  AssetGenImage get roamGradient =>
+      const AssetGenImage('assets/png/roam_gradient.png');
+
+  /// File path: assets/png/roam_landing_bg.png
+  AssetGenImage get roamLandingBg =>
+      const AssetGenImage('assets/png/roam_landing_bg.png');
+
+  /// File path: assets/png/roam_main_bg.png
+  AssetGenImage get roamMainBg =>
+      const AssetGenImage('assets/png/roam_main_bg.png');
+
+  /// File path: assets/png/roam_main_gradient.png
+  AssetGenImage get roamMainGradient =>
+      const AssetGenImage('assets/png/roam_main_gradient.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+    roamBg,
+    roamGradient,
+    roamLandingBg,
+    roamMainBg,
+    roamMainGradient,
+  ];
+}
+
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
-  /// File path: assets/svg/montaa_logo.svg
-  SvgGenImage get montaaLogo => const SvgGenImage('assets/svg/montaa_logo.svg');
+  /// File path: assets/svg/apple_logo.svg
+  SvgGenImage get appleLogo => const SvgGenImage('assets/svg/apple_logo.svg');
+
+  /// File path: assets/svg/facebook_logo.svg
+  SvgGenImage get facebookLogo =>
+      const SvgGenImage('assets/svg/facebook_logo.svg');
+
+  /// File path: assets/svg/google_logo.svg
+  SvgGenImage get googleLogo => const SvgGenImage('assets/svg/google_logo.svg');
+
+  /// File path: assets/svg/roam_monogram.svg
+  SvgGenImage get roamMonogram =>
+      const SvgGenImage('assets/svg/roam_monogram.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [montaaLogo];
+  List<SvgGenImage> get values => [
+    appleLogo,
+    facebookLogo,
+    googleLogo,
+    roamMonogram,
+  ];
 }
 
 class Assets {
   const Assets._();
 
-  static const String package = 'montaa';
-
+  static const $AssetsPngGen png = $AssetsPngGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();
+}
+
+class AssetGenImage {
+  const AssetGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+    this.animation,
+  });
+
+  final String _assetName;
+
+  final Size? size;
+  final Set<String> flavors;
+  final AssetGenImageAnimation? animation;
+
+  Image image({
+    Key? key,
+    AssetBundle? bundle,
+    ImageFrameBuilder? frameBuilder,
+    ImageErrorWidgetBuilder? errorBuilder,
+    String? semanticLabel,
+    bool excludeFromSemantics = false,
+    double? scale,
+    double? width,
+    double? height,
+    Color? color,
+    Animation<double>? opacity,
+    BlendMode? colorBlendMode,
+    BoxFit? fit,
+    AlignmentGeometry alignment = Alignment.center,
+    ImageRepeat repeat = ImageRepeat.noRepeat,
+    Rect? centerSlice,
+    bool matchTextDirection = false,
+    bool gaplessPlayback = true,
+    bool isAntiAlias = false,
+    String? package,
+    FilterQuality filterQuality = FilterQuality.medium,
+    int? cacheWidth,
+    int? cacheHeight,
+  }) {
+    return Image.asset(
+      _assetName,
+      key: key,
+      bundle: bundle,
+      frameBuilder: frameBuilder,
+      errorBuilder: errorBuilder,
+      semanticLabel: semanticLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      scale: scale,
+      width: width,
+      height: height,
+      color: color,
+      opacity: opacity,
+      colorBlendMode: colorBlendMode,
+      fit: fit,
+      alignment: alignment,
+      repeat: repeat,
+      centerSlice: centerSlice,
+      matchTextDirection: matchTextDirection,
+      gaplessPlayback: gaplessPlayback,
+      isAntiAlias: isAntiAlias,
+      package: package,
+      filterQuality: filterQuality,
+      cacheWidth: cacheWidth,
+      cacheHeight: cacheHeight,
+    );
+  }
+
+  ImageProvider provider({AssetBundle? bundle, String? package}) {
+    return AssetImage(_assetName, bundle: bundle, package: package);
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}
+
+class AssetGenImageAnimation {
+  const AssetGenImageAnimation({
+    required this.isAnimation,
+    required this.duration,
+    required this.frames,
+  });
+
+  final bool isAnimation;
+  final Duration duration;
+  final int frames;
 }
 
 class SvgGenImage {
@@ -44,14 +179,11 @@ class SvgGenImage {
   final Set<String> flavors;
   final bool _isVecFormat;
 
-  static const String package = 'montaa';
-
   _svg.SvgPicture svg({
     Key? key,
     bool matchTextDirection = false,
     AssetBundle? bundle,
-    @Deprecated('Do not specify package for a generated library asset')
-    String? package = package,
+    String? package,
     double? width,
     double? height,
     BoxFit fit = BoxFit.contain,
@@ -106,5 +238,5 @@ class SvgGenImage {
 
   String get path => _assetName;
 
-  String get keyName => 'packages/montaa/$_assetName';
+  String get keyName => _assetName;
 }
