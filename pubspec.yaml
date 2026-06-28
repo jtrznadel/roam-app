@@ -25,6 +25,7 @@ dependencies:
   retrofit: ^4.9.2
   json_annotation: ^4.11.0
   flutter_secure_storage: ^10.0.0
+  liquid_glass_widgets: ^0.18.4
 
 dev_dependencies:
   flutter_test:

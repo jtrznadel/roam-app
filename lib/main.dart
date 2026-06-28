@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
 import 'package:roam/core/config/app_config.dart';
 import 'package:roam/core/dependency_injection/dependency_injection.dart';
 import 'package:roam/core/theme/app_theme.dart';
@@ -11,9 +12,10 @@ import 'generated/l10n.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await LiquidGlassWidgets.initialize();
   await initDependencyInjections();
 
-  runApp(const MyApp());
+  runApp(LiquidGlassWidgets.wrap(child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

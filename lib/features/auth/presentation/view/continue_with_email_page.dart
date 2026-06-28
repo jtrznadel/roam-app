@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
 import 'package:roam/core/extensions/context_extension.dart';
 import 'package:roam/core/router/app_router.dart';
-import 'package:roam/core/widgets/app_appbar.dart';
 import 'package:roam/core/widgets/app_back_button.dart';
 import 'package:roam/core/widgets/app_button.dart';
+import 'package:roam/core/widgets/app_scaffold.dart';
 import 'package:roam/core/widgets/app_textfield.dart';
 import 'package:roam/gen/colors.gen.dart';
 import 'package:roam/generated/l10n.dart';
@@ -32,11 +33,11 @@ class ContinueWithEmailPage extends StatelessWidget {
           const OtpRoute().push(context);
         }
       },
-      child: Scaffold(
-        appBar: CustomAppBar(leading: AppBackButton()),
+      child: AppScaffold(
+        appBar: GlassAppBar(leading: AppBackButton()),
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: .fromLTRB(16, 50, 16, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -70,6 +71,7 @@ class ContinueWithEmailPage extends StatelessWidget {
                       : null,
                   text: S.of(context).continueLabel,
                   disabled: !canSubmitEmail,
+                  isLoading: isSubmitting,
                 ),
               ],
             ),

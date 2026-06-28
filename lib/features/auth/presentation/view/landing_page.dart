@@ -3,6 +3,7 @@ import 'package:roam/core/constants/app_sizes.dart';
 import 'package:roam/core/extensions/context_extension.dart';
 import 'package:roam/core/router/app_router.dart';
 import 'package:roam/core/widgets/app_button.dart';
+import 'package:roam/core/widgets/app_scaffold.dart';
 import 'package:roam/gen/assets.gen.dart';
 import 'package:roam/gen/colors.gen.dart';
 import 'package:roam/generated/l10n.dart';
@@ -12,7 +13,7 @@ class LandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AppScaffold(
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(

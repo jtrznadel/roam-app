@@ -20,12 +20,30 @@ class $AssetsPngGen {
   /// File path: assets/png/roam_bg.png
   AssetGenImage get roamBg => const AssetGenImage('assets/png/roam_bg.png');
 
+  /// File path: assets/png/roam_gradient.png
+  AssetGenImage get roamGradient =>
+      const AssetGenImage('assets/png/roam_gradient.png');
+
   /// File path: assets/png/roam_landing_bg.png
   AssetGenImage get roamLandingBg =>
       const AssetGenImage('assets/png/roam_landing_bg.png');
 
+  /// File path: assets/png/roam_main_bg.png
+  AssetGenImage get roamMainBg =>
+      const AssetGenImage('assets/png/roam_main_bg.png');
+
+  /// File path: assets/png/roam_main_gradient.png
+  AssetGenImage get roamMainGradient =>
+      const AssetGenImage('assets/png/roam_main_gradient.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [roamBg, roamLandingBg];
+  List<AssetGenImage> get values => [
+    roamBg,
+    roamGradient,
+    roamLandingBg,
+    roamMainBg,
+    roamMainGradient,
+  ];
 }
 
 class $AssetsSvgGen {

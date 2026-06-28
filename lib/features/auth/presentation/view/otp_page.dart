@@ -5,6 +5,7 @@ import 'package:roam/core/widgets/app_appbar.dart';
 import 'package:roam/core/widgets/app_back_button.dart';
 import 'package:roam/core/widgets/app_button.dart';
 import 'package:roam/core/widgets/app_otp_field.dart';
+import 'package:roam/core/widgets/app_scaffold.dart';
 import 'package:roam/features/auth/presentation/cubit/auth_session_cubit.dart';
 import 'package:roam/gen/colors.gen.dart';
 import 'package:roam/generated/l10n.dart';
@@ -45,7 +46,7 @@ class OtpPage extends StatelessWidget {
         context.read<AuthSessionCubit>().establishSession(session);
         context.read<LoginFormCubit>().clearVerifiedSession();
       },
-      child: Scaffold(
+      child: AppScaffold(
         appBar: CustomAppBar(leading: AppBackButton()),
         body: SafeArea(
           child: Padding(

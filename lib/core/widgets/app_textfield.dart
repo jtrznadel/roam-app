@@ -11,6 +11,7 @@ class AppTextField extends StatefulWidget {
   final TextInputType? keyboardType;
   final TextEditingController? controller;
   final String? errorMessage;
+  final bool? disabled;
 
   const AppTextField({
     super.key,
@@ -22,6 +23,7 @@ class AppTextField extends StatefulWidget {
     this.keyboardType = TextInputType.text,
     this.controller,
     this.errorMessage,
+    this.disabled,
   });
 
   @override
@@ -86,6 +88,7 @@ class _AppTextFieldState extends State<AppTextField> {
           onChanged: (value) {
             widget.onChanged(value);
           },
+          enabled: widget.disabled != null && !widget.disabled!,
         ),
         if (widget.errorMessage != null) ...[
           const SizedBox(height: 8),

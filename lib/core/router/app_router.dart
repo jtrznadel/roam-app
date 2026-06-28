@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:roam/core/dependency_injection/dependency_injection.dart';
 import 'package:roam/core/router/app_router_refresh_listenable.dart';
+import 'package:roam/core/widgets/app_button.dart';
 import 'package:roam/features/auth/presentation/cubit/auth_session_cubit.dart';
 import 'package:roam/features/auth/presentation/cubit/login_form_cubit.dart';
 import 'package:roam/features/auth/presentation/view/bootstrap_page.dart';
@@ -163,7 +164,18 @@ class ProfileRoute extends GoRouteData with $ProfileRoute {
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return Center(child: Text(S.of(context).profileTabLabel));
+    return Column(
+      mainAxisAlignment: .center,
+      children: [
+        Text(S.of(context).profileTabLabel),
+        AppButton(
+          text: 'Logout',
+          onPressed: () {
+            context.read<AuthSessionCubit>().logout();
+          },
+        ),
+      ],
+    );
   }
 }
 

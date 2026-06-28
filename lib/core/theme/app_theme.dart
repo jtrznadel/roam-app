@@ -5,7 +5,7 @@ import 'package:roam/gen/colors.gen.dart';
 class AppTheme {
   const AppTheme._();
 
-  static final _appTheme = ThemeData(brightness: Brightness.dark);
+  static final _appTheme = ThemeData(brightness: Brightness.light);
 
   static final _textTheme = GoogleFonts.interTextTheme(_appTheme.textTheme)
       .copyWith(
