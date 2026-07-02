@@ -40,10 +40,18 @@ class MainPage extends StatelessWidget {
       ),
     ];
 
-    return GlassScaffold(
-      body: navigationShell,
-      background: Image.asset(Assets.png.roamMainGradient.path, fit: .cover),
-      bottomBar: GlassTabBar.bottom(
+    return Scaffold(
+      extendBody: true,
+      body: DecoratedBox(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(Assets.png.roamMainGradient.path),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SizedBox.expand(child: navigationShell),
+      ),
+      bottomNavigationBar: GlassTabBar.bottom(
         tabs: tabs,
         selectedIndex: navigationShell.currentIndex,
         onTabSelected: _onTap,

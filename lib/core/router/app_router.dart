@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:roam/core/dependency_injection/dependency_injection.dart';
 import 'package:roam/core/router/app_router_refresh_listenable.dart';
-import 'package:roam/core/widgets/app_button.dart';
 import 'package:roam/features/auth/presentation/cubit/auth_session_cubit.dart';
 import 'package:roam/features/auth/presentation/cubit/login_form_cubit.dart';
 import 'package:roam/features/auth/presentation/view/bootstrap_page.dart';
@@ -11,6 +10,7 @@ import 'package:roam/features/auth/presentation/view/continue_with_email_page.da
 import 'package:roam/features/auth/presentation/view/landing_page.dart';
 import 'package:roam/features/auth/presentation/view/otp_page.dart';
 import 'package:roam/features/main/presentation/view/main_page.dart';
+import 'package:roam/features/profile/presentation/view/profile_page.dart';
 import 'package:roam/generated/l10n.dart';
 
 part 'app_router.g.dart';
@@ -113,7 +113,10 @@ class AppShellRoute extends StatefulShellRouteData {
     BuildContext context,
     GoRouterState state,
     StatefulNavigationShell navigationShell,
-  ) => MainPage(navigationShell: navigationShell);
+  ) => MainPage(
+    key: const ValueKey<String>('main_shell'),
+    navigationShell: navigationShell,
+  );
 }
 
 class HomeTabBranchData extends StatefulShellBranchData {
@@ -164,18 +167,7 @@ class ProfileRoute extends GoRouteData with $ProfileRoute {
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return Column(
-      mainAxisAlignment: .center,
-      children: [
-        Text(S.of(context).profileTabLabel),
-        AppButton(
-          text: 'Logout',
-          onPressed: () {
-            context.read<AuthSessionCubit>().logout();
-          },
-        ),
-      ],
-    );
+    return ProfilePage();
   }
 }
 

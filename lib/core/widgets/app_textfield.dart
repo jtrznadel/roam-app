@@ -88,7 +88,7 @@ class _AppTextFieldState extends State<AppTextField> {
           onChanged: (value) {
             widget.onChanged(value);
           },
-          enabled: widget.disabled != null && !widget.disabled!,
+          enabled: widget.disabled == null || !widget.disabled!,
         ),
         if (widget.errorMessage != null) ...[
           const SizedBox(height: 8),

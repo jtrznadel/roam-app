@@ -17,6 +17,10 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsPngGen {
   const $AssetsPngGen();
 
+  /// File path: assets/png/deafault_avatar.png
+  AssetGenImage get deafaultAvatar =>
+      const AssetGenImage('assets/png/deafault_avatar.png');
+
   /// File path: assets/png/roam_bg.png
   AssetGenImage get roamBg => const AssetGenImage('assets/png/roam_bg.png');
 
@@ -38,6 +42,7 @@ class $AssetsPngGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+    deafaultAvatar,
     roamBg,
     roamGradient,
     roamLandingBg,

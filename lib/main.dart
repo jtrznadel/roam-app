@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:go_router/go_router.dart';
 import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
 import 'package:roam/core/config/app_config.dart';
 import 'package:roam/core/dependency_injection/dependency_injection.dart';
@@ -18,15 +19,29 @@ Future<void> main() async {
   runApp(LiquidGlassWidgets.wrap(child: const MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  late final AuthSessionCubit _authSessionCubit = sl<AuthSessionCubit>();
+  late final GoRouter _router = sl<AppRouter>().router;
+
+  @override
+  void initState() {
+    super.initState();
+    _authSessionCubit.bootstrap();
+  }
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider.value(
-      value: sl<AuthSessionCubit>()..bootstrap(),
+      value: _authSessionCubit,
       child: MaterialApp.router(
-        routerConfig: sl<AppRouter>().router,
+        routerConfig: _router,
         locale: const Locale('en'),
         localizationsDelegates: const [
           S.delegate,

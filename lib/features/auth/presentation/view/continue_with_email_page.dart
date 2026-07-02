@@ -61,6 +61,7 @@ class ContinueWithEmailPage extends StatelessWidget {
                   autoFocus: true,
                   keyboardType: TextInputType.emailAddress,
                   errorMessage: errorMessage,
+                  disabled: isSubmitting,
                 ),
                 Spacer(),
                 AppButton(
