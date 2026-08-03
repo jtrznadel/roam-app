@@ -24,5 +24,5 @@ abstract interface class AuthRepository {
 
   Future<Either<Failure, Unit>> clearSession();
 
-  Future<Either<Failure, Unit>> logout();
+  Future<Either<Failure, Unit>> logout({required String refreshToken});
 }

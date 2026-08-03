@@ -14,6 +14,9 @@ import 'package:roam/features/auth/domain/usecases/verify_email_otp_usecase.dart
 import 'package:roam/features/auth/presentation/cubit/auth_session_cubit.dart';
 import 'package:roam/features/auth/presentation/cubit/login_form_cubit.dart';
 
+import '../../core/router/auth_status_provider.dart';
+import 'domain/usecases/refresh_session_usecase.dart';
+
 Future<void> initAuthInjection() async {
   sl.registerLazySingleton<AuthApi>(() => AuthApi(sl()));
 
@@ -41,15 +44,20 @@ Future<void> initAuthInjection() async {
   sl.registerFactory(() => GetStoredSessionUseCase(repo: sl()));
   sl.registerFactory(() => PersistSessionUseCase(repo: sl()));
   sl.registerFactory(() => ClearSessionUseCase(repo: sl()));
+  sl.registerLazySingleton(() => RefreshSessionUseCase(repo: sl()));
   sl.registerFactory(() => LogoutUseCase(repo: sl()));
 
   sl.registerLazySingleton(
     () => AuthSessionCubit(
       getStoredSessionUseCase: sl(),
       persistSessionUseCase: sl(),
+      refreshSessionUseCase: sl(),
+      clearSessionUseCase: sl(),
       logoutUseCase: sl(),
     ),
   );
+
+  sl.registerLazySingleton<AuthStatusProvider>(() => sl<AuthSessionCubit>());
 
   sl.registerFactory(
     () => LoginFormCubit(

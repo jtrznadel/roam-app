@@ -4,6 +4,9 @@ import 'package:get_it/get_it.dart';
 import 'package:roam/core/network/dio_factory.dart';
 import 'package:roam/core/router/app_router.dart';
 import 'package:roam/features/auth/auth_injection.dart';
+import 'package:roam/features/auth/presentation/cubit/auth_session_cubit.dart';
+
+import '../network/auth_interceptor.dart';
 
 final sl = GetIt.instance;
 
@@ -16,5 +19,16 @@ Future<void> initDependencyInjections() async {
 
   await initAuthInjection();
 
-  sl.registerLazySingleton(() => AppRouter(authSessionCubit: sl()));
+  sl.registerLazySingleton<AuthInterceptor>(
+    () => AuthInterceptor(
+      getStoredSessionUseCase: sl(),
+      refreshSessionUseCase: sl(),
+      dioProvider: () => sl<Dio>(),
+      onSessionExpired: () => sl<AuthSessionCubit>().invalidateSession(),
+    ),
+  );
+
+  sl<Dio>().interceptors.insert(0, sl<AuthInterceptor>());
+
+  sl.registerLazySingleton(() => AppRouter(authStatusProvider: sl()));
 }

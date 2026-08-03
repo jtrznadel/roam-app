@@ -67,8 +67,12 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, Unit>> logout() async {
-    return clearSession();
+  Future<Either<Failure, Unit>> logout({required String refreshToken}) async {
+    final result = await handleApiCall(
+      () => _authRemoteDatasource.logout(refreshToken: refreshToken),
+    );
+
+    return result.map((_) => unit);
   }
 
   @override
@@ -89,6 +93,17 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<Either<Failure, AuthSessionEntity>> refreshSession({
     required String refreshToken,
   }) async {
-    return const Left(Failure.generalError(message: 'Not implemented yet.'));
+    final result = await handleApiCall(
+      () => _authRemoteDatasource.refreshSession(refreshToken: refreshToken),
+    );
+
+    return await result.fold((failure) => Left(failure), (session) async {
+      try {
+        await _authLocalDatasource.persistSession(session);
+        return Right(session.toEntity());
+      } catch (_) {
+        return const Left(Failure.authenticationError());
+      }
+    });
   }
 }

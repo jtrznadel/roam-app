@@ -11,7 +11,7 @@ class AppScaffold extends StatelessWidget {
     super.key,
     required this.body,
     this.appBar,
-    this.backgroundColor,
+    this.backgroundColor = Colors.transparent,
     this.extendBody = true,
   });
 

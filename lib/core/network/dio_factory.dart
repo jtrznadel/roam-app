@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import '../config/app_config.dart';
 
 class DioFactory {
-  static Dio create() {
+  static Dio create({List<Interceptor> interceptors = const []}) {
     final dio = Dio(
       BaseOptions(
         baseUrl: AppConfig.instance.apiUrl,
@@ -17,9 +17,16 @@ class DioFactory {
       ),
     );
 
+    dio.interceptors.addAll(interceptors);
+
     if (AppConfig.instance.enableLogs) {
       dio.interceptors.add(
-        LogInterceptor(requestBody: true, responseBody: true),
+        LogInterceptor(
+          requestHeader: false,
+          requestBody: false,
+          responseHeader: false,
+          responseBody: false,
+        ),
       );
     }
 

@@ -1,5 +1,7 @@
 import 'package:roam/features/auth/data/datasources/auth_api.dart';
 import 'package:roam/features/auth/data/models/auth_session_model.dart';
+import 'package:roam/features/auth/data/models/logout_request.dart';
+import 'package:roam/features/auth/data/models/refresh_session_request.dart';
 import 'package:roam/features/auth/data/models/request_email_otp_request.dart';
 import 'package:roam/features/auth/data/models/request_email_otp_response.dart';
 import 'package:roam/features/auth/data/models/verify_email_otp_request.dart';
@@ -13,6 +15,10 @@ abstract class AuthRemoteDatasource {
     required String deviceId,
     required String deviceName,
   });
+
+  Future<AuthSessionModel> refreshSession({required String refreshToken});
+
+  Future<void> logout({required String refreshToken});
 }
 
 class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
@@ -41,5 +47,17 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
         deviceName: deviceName,
       ),
     );
+  }
+
+  @override
+  Future<AuthSessionModel> refreshSession({required String refreshToken}) {
+    return _authApi.refreshSession(
+      RefreshSessionRequest(refreshToken: refreshToken),
+    );
+  }
+
+  @override
+  Future<void> logout({required String refreshToken}) {
+    return _authApi.logout(LogoutRequest(refreshToken: refreshToken));
   }
 }
