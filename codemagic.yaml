@@ -1,0 +1,67 @@
+workflows:
+  quality_gate:
+    name: Quality Gate
+    max_build_duration: -
+
+    environment:
+      flutter: stable
+
+    triggering:
+      events:
+        - pull_request
+      branch_patterns:
+        - pattern: dev
+          include: true
+          source: false
+        - pattern: main
+          include: true
+          source: false
+      cancel_previous_builds: true
+
+    scripts:
+      - name: Install dependencies
+        script: flutter pub get
+
+      - name: Verify formatting
+        script: dart format --output=none --set-exit-if-changed .
+
+      - name: Run static analysis
+        script: flutter analyze
+
+      - name: Run unit and widget tests
+        script: flutter test
+
+  android_internal:
+    name: Android Internal Build
+    max_build_duration: 45
+
+    environment:
+      flutter: stable
+
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: dev
+          include: true
+          source: true
+      cancel_previous_builds: true
+
+    scripts:
+      - name: Install dependencies
+        script: flutter pub get
+
+      - name: Verify formatting
+        script: dart format --output=none --set-exit-if-changed .
+
+      - name: Run static analysis
+        script: flutter analyze
+
+      - name: Run unit and widget tests
+        script: flutter test
+
+      - name: Build Android development APK
+        script: flutter build apk --debug --flavor dev -t lib/main_dev.dart
+
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
