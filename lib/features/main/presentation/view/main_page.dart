@@ -5,7 +5,6 @@ import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:roam/core/extensions/context_extension.dart';
 import 'package:roam/gen/assets.gen.dart';
 import 'package:roam/gen/colors.gen.dart';
-import 'package:roam/generated/l10n.dart';
 
 class MainPage extends StatelessWidget {
   final StatefulNavigationShell navigationShell;
@@ -24,19 +23,19 @@ class MainPage extends StatelessWidget {
     final tabs = [
       GlassTab(
         icon: const Icon(LucideIcons.house),
-        label: S.of(context).homeTabLabel,
+        // label: S.of(context).homeTabLabel,
       ),
       GlassTab(
-        icon: const Icon(LucideIcons.mapPin),
-        label: S.of(context).mapTabLabel,
+        icon: const Icon(LucideIcons.map),
+        // label: S.of(context).mapTabLabel,
       ),
       GlassTab(
-        icon: const Icon(LucideIcons.mountain),
-        label: S.of(context).peaksTabLabel,
+        icon: const Icon(LucideIcons.bookOpenCheck),
+        // label: S.of(context).peaksTabLabel,
       ),
       GlassTab(
         icon: const Icon(LucideIcons.user),
-        label: S.of(context).profileTabLabel,
+        // label: S.of(context).profileTabLabel,
       ),
     ];
 
@@ -45,7 +44,7 @@ class MainPage extends StatelessWidget {
       body: DecoratedBox(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(Assets.png.roamMainGradient.path),
+            image: AssetImage(Assets.png.roamGradient.path),
             fit: BoxFit.cover,
           ),
         ),
@@ -63,6 +62,12 @@ class MainPage extends StatelessWidget {
         ),
         unselectedIconColor: AppColors.fontSecondary,
         selectedIconColor: AppColors.fontPrimary,
+        extraButton: GlassBottomBarExtraButton(
+          icon: const Icon(LucideIcons.radar),
+          onTap: () {},
+          iconColor: AppColors.fontPrimary,
+          label: '',
+        ),
       ),
     );
   }

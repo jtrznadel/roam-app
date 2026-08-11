@@ -4,6 +4,9 @@ import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
 class AppScaffold extends StatelessWidget {
   final Widget body;
   final Widget? appBar;
+  final Widget? header;
+  final ScrollController? headerScrollController;
+  final double headerFadeDistance;
   final Color? backgroundColor;
   final bool extendBody;
 
@@ -11,6 +14,9 @@ class AppScaffold extends StatelessWidget {
     super.key,
     required this.body,
     this.appBar,
+    this.header,
+    this.headerScrollController,
+    this.headerFadeDistance = 60,
     this.backgroundColor = Colors.transparent,
     this.extendBody = true,
   });
@@ -20,6 +26,9 @@ class AppScaffold extends StatelessWidget {
     return GlassScaffold(
       body: body,
       appBar: appBar,
+      header: header,
+      headerScrollController: headerScrollController,
+      headerFadeDistance: headerFadeDistance,
       backgroundColor: backgroundColor,
       extendBody: extendBody,
     );

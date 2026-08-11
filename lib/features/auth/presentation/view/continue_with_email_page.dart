@@ -34,6 +34,7 @@ class ContinueWithEmailPage extends StatelessWidget {
         }
       },
       child: AppScaffold(
+        backgroundColor: AppColors.background,
         appBar: GlassAppBar(leading: AppBackButton()),
         body: SafeArea(
           child: Padding(
