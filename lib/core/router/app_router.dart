@@ -20,8 +20,7 @@ part 'app_router.g.dart';
 class AppRouter {
   final AuthStatusProvider _authStatusProvider;
 
-  AppRouter({required AuthStatusProvider authStatusProvider})
-    : _authStatusProvider = authStatusProvider;
+  AppRouter({required this._authStatusProvider});
 
   late final GoRouter router = GoRouter(
     routes: $appRoutes,

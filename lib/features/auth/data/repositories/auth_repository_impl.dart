@@ -13,10 +13,9 @@ class AuthRepositoryImpl implements AuthRepository {
   final AuthLocalDatasource _authLocalDatasource;
 
   const AuthRepositoryImpl({
-    required AuthRemoteDatasource authRemoteDatasource,
-    required AuthLocalDatasource authLocalDatasource,
-  }) : _authRemoteDatasource = authRemoteDatasource,
-       _authLocalDatasource = authLocalDatasource;
+    required this._authRemoteDatasource,
+    required this._authLocalDatasource,
+  });
 
   @override
   Future<Either<Failure, Unit>> requestEmailOtp({required String email}) async {

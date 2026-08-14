@@ -19,5 +19,5 @@ void initPeaksInjection() {
     () => PeakRepositoryImpl(localDatasource: sl()),
   );
 
-  sl.registerLazySingleton(() => GetNearbyPeaksUseCase(repository: sl()));
+  sl.registerLazySingleton(() => GetNearbyPeaksUseCase(repo: sl()));
 }

@@ -24,8 +24,7 @@ abstract class AuthRemoteDatasource {
 class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
   final AuthApi _authApi;
 
-  const AuthRemoteDatasourceImpl({required AuthApi authApi})
-    : _authApi = authApi;
+  const AuthRemoteDatasourceImpl({required this._authApi});
 
   @override
   Future<RequestEmailOtpResponse> requestEmailOtp({required String email}) {

@@ -1,15 +1,14 @@
 import 'package:dartz/dartz.dart';
-
-import '../../../../core/error/failure.dart';
-import '../../../../core/usecase/usecase.dart';
-import '../entities/auth_session_entity.dart';
-import '../repositories/auth_repository.dart';
+import 'package:roam/core/error/failure.dart';
+import 'package:roam/core/utils/usecases/usecase.dart';
+import 'package:roam/features/auth/domain/entities/auth_session_entity.dart';
+import 'package:roam/features/auth/domain/repositories/auth_repository.dart';
 
 class RefreshSessionUseCase
     implements UseCase<AuthSessionEntity, RefreshSessionParams> {
   final AuthRepository _repo;
 
-  const RefreshSessionUseCase({required AuthRepository repo}) : _repo = repo;
+  const RefreshSessionUseCase({required this._repo});
 
   @override
   Future<Either<Failure, AuthSessionEntity>> call(RefreshSessionParams params) {

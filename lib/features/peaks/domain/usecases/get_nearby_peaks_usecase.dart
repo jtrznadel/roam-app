@@ -1,18 +1,18 @@
 import 'package:dartz/dartz.dart';
 import 'package:roam/core/error/failure.dart';
-import 'package:roam/core/usecase/usecase.dart';
+import 'package:roam/core/utils/usecases/usecase.dart';
 import 'package:roam/features/peaks/domain/entities/peak.dart';
 import 'package:roam/features/peaks/domain/repositories/peak_repository.dart';
 
 class GetNearbyPeaksUseCase
     implements UseCase<List<Peak>, GetNearbyPeaksUseCaseParams> {
-  final PeakRepository _repository;
+  final PeakRepository _repo;
 
-  const GetNearbyPeaksUseCase({required this._repository});
+  const GetNearbyPeaksUseCase({required this._repo});
 
   @override
   Future<Either<Failure, List<Peak>>> call(GetNearbyPeaksUseCaseParams params) {
-    return _repository.getNearbyPeaks(
+    return _repo.getNearbyPeaks(
       latitude: params.latitude,
       longitude: params.longitude,
       searchRadiusMeters: params.searchRadiusMeters,

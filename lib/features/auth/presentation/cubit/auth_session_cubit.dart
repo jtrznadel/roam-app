@@ -21,17 +21,12 @@ class AuthSessionCubit extends Cubit<AuthSessionState>
   final LogoutUseCase _logoutUseCase;
 
   AuthSessionCubit({
-    required GetStoredSessionUseCase getStoredSessionUseCase,
-    required PersistSessionUseCase persistSessionUseCase,
-    required RefreshSessionUseCase refreshSessionUseCase,
-    required ClearSessionUseCase clearSessionUseCase,
-    required LogoutUseCase logoutUseCase,
-  }) : _getStoredSessionUseCase = getStoredSessionUseCase,
-       _persistSessionUseCase = persistSessionUseCase,
-       _refreshSessionUseCase = refreshSessionUseCase,
-       _clearSessionUseCase = clearSessionUseCase,
-       _logoutUseCase = logoutUseCase,
-       super(const AuthSessionState.bootstrapping());
+    required this._getStoredSessionUseCase,
+    required this._persistSessionUseCase,
+    required this._refreshSessionUseCase,
+    required this._clearSessionUseCase,
+    required this._logoutUseCase,
+  }) : super(const AuthSessionState.bootstrapping());
 
   @override
   bool get isBootstrapping => state.isBootstrapping;
