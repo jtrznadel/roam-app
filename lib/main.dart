@@ -4,7 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
 import 'package:roam/core/config/app_config.dart';
-import 'package:roam/core/dependency_injection/dependency_injection.dart';
+import 'package:roam/core/di/dependency_injection.dart';
 import 'package:roam/core/theme/app_theme.dart';
 
 import 'core/router/app_router.dart';

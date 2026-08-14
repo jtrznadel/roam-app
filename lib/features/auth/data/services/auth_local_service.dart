@@ -16,8 +16,7 @@ class AuthLocalServiceImpl implements AuthLocalService {
 
   final FlutterSecureStorage _storage;
 
-  const AuthLocalServiceImpl({required FlutterSecureStorage storage})
-    : _storage = storage;
+  const AuthLocalServiceImpl({required this._storage});
 
   @override
   Future<AuthSessionModel?> getSession() async {

@@ -1,4 +1,4 @@
-import 'package:roam/core/dependency_injection/dependency_injection.dart';
+import 'package:roam/core/di/dependency_injection.dart';
 import 'package:roam/features/auth/data/datasources/auth_api.dart';
 import 'package:roam/features/auth/data/datasources/auth_local_datasource.dart';
 import 'package:roam/features/auth/data/datasources/auth_remote_datasource.dart';

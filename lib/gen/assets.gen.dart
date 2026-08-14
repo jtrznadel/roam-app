@@ -14,6 +14,13 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart' as _svg;
 import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
+class $AssetsDataGen {
+  const $AssetsDataGen();
+
+  /// Directory path: assets/data/peaks
+  $AssetsDataPeaksGen get peaks => const $AssetsDataPeaksGen();
+}
+
 class $AssetsPngGen {
   const $AssetsPngGen();
 
@@ -77,9 +84,18 @@ class $AssetsSvgGen {
   ];
 }
 
-class Assets {
-  const Assets._();
+class $AssetsDataPeaksGen {
+  const $AssetsDataPeaksGen();
 
+  /// File path: assets/data/peaks/tatry_polskie.v1.json
+  String get tatryPolskieV1 => 'assets/data/peaks/tatry_polskie.v1.json';
+
+  /// List of all assets
+  List<String> get values => [tatryPolskieV1];
+}
+
+abstract final class Assets {
+  static const $AssetsDataGen data = $AssetsDataGen();
   static const $AssetsPngGen png = $AssetsPngGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
