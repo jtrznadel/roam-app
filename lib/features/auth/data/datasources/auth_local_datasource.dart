@@ -12,8 +12,7 @@ abstract class AuthLocalDatasource {
 class AuthLocalDatasourceImpl implements AuthLocalDatasource {
   final AuthLocalService _authLocalService;
 
-  const AuthLocalDatasourceImpl({required AuthLocalService authLocalService})
-    : _authLocalService = authLocalService;
+  const AuthLocalDatasourceImpl({required this._authLocalService});
 
   @override
   Future<AuthSessionModel?> getStoredSession() {

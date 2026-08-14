@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:roam/core/dependency_injection/dependency_injection.dart';
+import 'package:roam/core/di/dependency_injection.dart';
 import 'package:roam/core/router/app_router_refresh_listenable.dart';
 import 'package:roam/features/auth/presentation/cubit/login_form_cubit.dart';
 import 'package:roam/features/auth/presentation/view/bootstrap_page.dart';
@@ -20,8 +20,7 @@ part 'app_router.g.dart';
 class AppRouter {
   final AuthStatusProvider _authStatusProvider;
 
-  AppRouter({required AuthStatusProvider authStatusProvider})
-    : _authStatusProvider = authStatusProvider;
+  AppRouter({required this._authStatusProvider});
 
   late final GoRouter router = GoRouter(
     routes: $appRoutes,

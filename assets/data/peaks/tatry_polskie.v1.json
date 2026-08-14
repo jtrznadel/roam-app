@@ -1,0 +1,159 @@
+{
+  "catalogVersion": 1,
+  "region": {
+    "id": "PL-TATRY-POLSKIE",
+    "name": "Tatry Polskie"
+  },
+  "peaks": [
+    {
+      "id": "PL-TATRY-RYSY",
+      "name": "Rysy",
+      "altitudeMeters": 2499,
+      "latitude": 49.179575,
+      "longitude": 20.088108,
+      "rangeName": "Tatry Wysokie",
+      "verificationRadiusMeters": 70,
+      "isActive": true
+    },
+    {
+      "id": "PL-TATRY-GIEWONT",
+      "name": "Giewont",
+      "altitudeMeters": 1894,
+      "latitude": 49.251005,
+      "longitude": 19.934084,
+      "rangeName": "Tatry Zachodnie",
+      "verificationRadiusMeters": 70,
+      "isActive": true
+    },
+    {
+      "id": "PL-TATRY-KASPROWY-WIERCH",
+      "name": "Kasprowy Wierch",
+      "altitudeMeters": 1987,
+      "latitude": 49.231667,
+      "longitude": 19.981667,
+      "rangeName": "Tatry Zachodnie",
+      "verificationRadiusMeters": 70,
+      "isActive": true
+    },
+    {
+      "id": "PL-TATRY-SWINICA",
+      "name": "Świnica",
+      "altitudeMeters": 2301,
+      "latitude": 49.219421,
+      "longitude": 20.009306,
+      "rangeName": "Tatry Wysokie",
+      "verificationRadiusMeters": 70,
+      "isActive": true
+    },
+    {
+      "id": "PL-TATRY-KOSCIELEC",
+      "name": "Kościelec",
+      "altitudeMeters": 2155,
+      "latitude": 49.225179,
+      "longitude": 20.014583,
+      "rangeName": "Tatry Wysokie",
+      "verificationRadiusMeters": 70,
+      "isActive": true
+    },
+    {
+      "id": "PL-TATRY-SZPIGLASOWY-WIERCH",
+      "name": "Szpiglasowy Wierch",
+      "altitudeMeters": 2172,
+      "latitude": 49.197219,
+      "longitude": 20.04,
+      "rangeName": "Tatry Wysokie",
+      "verificationRadiusMeters": 70,
+      "isActive": true
+    },
+    {
+      "id": "PL-TATRY-CIEMNIAK",
+      "name": "Ciemniak",
+      "altitudeMeters": 2096,
+      "latitude": 49.231124,
+      "longitude": 19.903224,
+      "rangeName": "Tatry Zachodnie",
+      "verificationRadiusMeters": 70,
+      "isActive": true
+    },
+    {
+      "id": "PL-TATRY-KRZESANICA",
+      "name": "Krzesanica",
+      "altitudeMeters": 2122,
+      "latitude": 49.231694,
+      "longitude": 19.910222,
+      "rangeName": "Tatry Zachodnie",
+      "verificationRadiusMeters": 70,
+      "isActive": true
+    },
+    {
+      "id": "PL-TATRY-MALOLACZNIAK",
+      "name": "Małołączniak",
+      "altitudeMeters": 2096,
+      "latitude": 49.235806,
+      "longitude": 19.919306,
+      "rangeName": "Tatry Zachodnie",
+      "verificationRadiusMeters": 70,
+      "isActive": true
+    },
+    {
+      "id": "PL-TATRY-KOPA-KONDRACKA",
+      "name": "Kopa Kondracka",
+      "altitudeMeters": 2005,
+      "latitude": 49.236504,
+      "longitude": 19.932217,
+      "rangeName": "Tatry Zachodnie",
+      "verificationRadiusMeters": 70,
+      "isActive": true
+    },
+    {
+      "id": "PL-TATRY-GESIA-SZYJA",
+      "name": "Gęsia Szyja",
+      "altitudeMeters": 1489,
+      "latitude": 49.2594,
+      "longitude": 20.07705,
+      "rangeName": "Tatry Wysokie",
+      "verificationRadiusMeters": 70,
+      "isActive": true
+    },
+    {
+      "id": "PL-TATRY-NOSAL",
+      "name": "Nosal",
+      "altitudeMeters": 1206,
+      "latitude": 49.276569,
+      "longitude": 19.989439,
+      "rangeName": "Tatry Zachodnie",
+      "verificationRadiusMeters": 70,
+      "isActive": true
+    },
+    {
+      "id": "PL-TATRY-SARNIA-SKALA",
+      "name": "Sarnia Skała",
+      "altitudeMeters": 1377,
+      "latitude": 49.265019,
+      "longitude": 19.94065,
+      "rangeName": "Tatry Zachodnie",
+      "verificationRadiusMeters": 70,
+      "isActive": true
+    },
+    {
+      "id": "PL-TATRY-GRZES",
+      "name": "Grześ",
+      "altitudeMeters": 1653,
+      "latitude": 49.236694,
+      "longitude": 19.766361,
+      "rangeName": "Tatry Zachodnie",
+      "verificationRadiusMeters": 70,
+      "isActive": true
+    },
+    {
+      "id": "PL-TATRY-WOLOWIEC",
+      "name": "Wołowiec",
+      "altitudeMeters": 2064,
+      "latitude": 49.207514,
+      "longitude": 19.763108,
+      "rangeName": "Tatry Zachodnie",
+      "verificationRadiusMeters": 70,
+      "isActive": true
+    }
+  ]
+}

@@ -5,6 +5,8 @@ import 'package:roam/core/network/dio_factory.dart';
 import 'package:roam/core/router/app_router.dart';
 import 'package:roam/features/auth/auth_injection.dart';
 import 'package:roam/features/auth/presentation/cubit/auth_session_cubit.dart';
+import 'package:roam/features/peaks/data/datasources/peak_local_datasource.dart';
+import 'package:roam/features/peaks/peaks_injection.dart';
 
 import '../network/auth_interceptor.dart';
 
@@ -18,6 +20,9 @@ Future<void> initDependencyInjections() async {
   );
 
   await initAuthInjection();
+  initPeaksInjection();
+
+  await sl<PeakLocalDatasource>().seedCatalogIfNeeded();
 
   sl.registerLazySingleton<AuthInterceptor>(
     () => AuthInterceptor(

@@ -15,11 +15,9 @@ class LoginFormCubit extends Cubit<LoginFormState> {
   final VerifyEmailOtpUseCase _verifyEmailOtpUseCase;
 
   LoginFormCubit({
-    required RequestEmailOtpUseCase requestEmailOtpUseCase,
-    required VerifyEmailOtpUseCase verifyEmailOtpUseCase,
-  }) : _requestEmailOtpUseCase = requestEmailOtpUseCase,
-       _verifyEmailOtpUseCase = verifyEmailOtpUseCase,
-       super(const LoginFormState());
+    required this._requestEmailOtpUseCase,
+    required this._verifyEmailOtpUseCase,
+  }) : super(const LoginFormState());
 
   static const int _resendCooldownSeconds = 60;
   Timer? _resendTimer;

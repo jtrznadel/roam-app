@@ -12,8 +12,11 @@ List<RouteBase> get $appRoutes => [
   $appShellRoute,
 ];
 
-RouteBase get $bootstrapRoute =>
-    GoRouteData.$route(path: '/bootstrap', factory: $BootstrapRoute._fromState);
+RouteBase get $bootstrapRoute => GoRouteData.$route(
+  path: '/bootstrap',
+  hasOverriddenOnExit: false,
+  factory: $BootstrapRoute._fromState,
+);
 
 mixin $BootstrapRoute on GoRouteData {
   static BootstrapRoute _fromState(GoRouterState state) =>
@@ -41,13 +44,19 @@ RouteBase get $loginShellRoute => ShellRouteData.$route(
   routes: [
     GoRouteData.$route(
       path: '/login/landing',
+      hasOverriddenOnExit: false,
       factory: $LoginLandingRoute._fromState,
     ),
     GoRouteData.$route(
       path: '/login/email',
+      hasOverriddenOnExit: false,
       factory: $ContinueWithEmailRoute._fromState,
     ),
-    GoRouteData.$route(path: '/login/otp', factory: $OtpRoute._fromState),
+    GoRouteData.$route(
+      path: '/login/otp',
+      hasOverriddenOnExit: false,
+      factory: $OtpRoute._fromState,
+    ),
   ],
 );
 
@@ -123,20 +132,38 @@ RouteBase get $appShellRoute => StatefulShellRouteData.$route(
   branches: [
     StatefulShellBranchData.$branch(
       routes: [
-        GoRouteData.$route(path: '/home', factory: $HomeRoute._fromState),
-      ],
-    ),
-    StatefulShellBranchData.$branch(
-      routes: [GoRouteData.$route(path: '/map', factory: $MapRoute._fromState)],
-    ),
-    StatefulShellBranchData.$branch(
-      routes: [
-        GoRouteData.$route(path: '/peaks', factory: $PeaksRoute._fromState),
+        GoRouteData.$route(
+          path: '/home',
+          hasOverriddenOnExit: false,
+          factory: $HomeRoute._fromState,
+        ),
       ],
     ),
     StatefulShellBranchData.$branch(
       routes: [
-        GoRouteData.$route(path: '/profile', factory: $ProfileRoute._fromState),
+        GoRouteData.$route(
+          path: '/map',
+          hasOverriddenOnExit: false,
+          factory: $MapRoute._fromState,
+        ),
+      ],
+    ),
+    StatefulShellBranchData.$branch(
+      routes: [
+        GoRouteData.$route(
+          path: '/peaks',
+          hasOverriddenOnExit: false,
+          factory: $PeaksRoute._fromState,
+        ),
+      ],
+    ),
+    StatefulShellBranchData.$branch(
+      routes: [
+        GoRouteData.$route(
+          path: '/profile',
+          hasOverriddenOnExit: false,
+          factory: $ProfileRoute._fromState,
+        ),
       ],
     ),
   ],

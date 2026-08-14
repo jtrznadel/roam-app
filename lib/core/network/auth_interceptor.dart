@@ -11,14 +11,11 @@ class AuthInterceptor extends Interceptor {
   final Future<void> Function() _onSessionExpired;
 
   AuthInterceptor({
-    required GetStoredSessionUseCase getStoredSessionUseCase,
-    required RefreshSessionUseCase refreshSessionUseCase,
-    required Dio Function() dioProvider,
-    required Future<void> Function() onSessionExpired,
-  }) : _getStoredSessionUseCase = getStoredSessionUseCase,
-       _refreshSessionUseCase = refreshSessionUseCase,
-       _dioProvider = dioProvider,
-       _onSessionExpired = onSessionExpired;
+    required this._getStoredSessionUseCase,
+    required this._refreshSessionUseCase,
+    required this._dioProvider,
+    required this._onSessionExpired,
+  });
 
   static const String _retriedKey = 'auth_retried';
   static const String _authPathPrefix = '/api/v1/auth/';
